@@ -1,0 +1,74 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+/// <summary>
+///SMOrderDeliverPlanL 的摘要说明
+/// </summary>
+public class SalesPayBillL
+{
+    private static readonly ISalsePayBill spb = DALFactory.SalesPayBill();
+    public SalesPayBillL()
+    {
+        //
+        //TODO: 在此处添加构造函数逻辑
+        //
+    }
+      public void Insert_Main(Guid id, decimal loan, decimal maturity, decimal bill, string man)
+      {
+         spb.Insert_Main(id,loan,maturity,bill,man);
+      }
+        public void Update_Bill(Guid id, Guid ptID, string num, decimal money, string man, string remark,decimal price,decimal pronum)
+        {
+            spb.Update_Bill(id,ptID,num,money,man,remark,price,pronum);
+        }
+        public int Insert_Bill(Guid id, Guid ptID, string num, decimal money, string man, string remark,decimal price,decimal pronum)
+        {
+           return spb.Insert_Bill(id,ptID,num,money,man,remark,price,pronum);
+        }
+        public void Delete_Main(Guid id)
+        {
+            spb.Delete_Main(id);
+        }
+        public int Insert_Pay(Guid id, decimal money, string man, string remark)
+        {
+          return   spb.Insert_Pay(id,money,man,remark);
+        }
+        public void Delete_Pay(Guid id)
+        {
+            spb.Delete_Pay(id);
+        }
+        public void Update_Pay(Guid id, decimal money, string man, string remark)
+        {
+            spb.Update_Pay(id,money,man,remark);
+        }
+        public DataSet Select_Bill(Guid id)
+        {
+            return spb.Select_Bill(id);
+        }
+        public DataSet Select_Pay(Guid id)
+        {
+            return spb.Select_Pay(id);
+        }
+        public void Update_Main(Guid id, decimal loan, decimal maturity, decimal bill, string man)
+        {
+            spb.Update_Main(id,loan,maturity,bill,man);
+        }
+        public DataSet Select_Main(string condition)
+        {
+            return spb.Select_Main(condition);
+        }
+        public void Delete_Bill(Guid id)
+        {
+            spb.Delete_Bill(id);
+        }
+         
+}

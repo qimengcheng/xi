@@ -1,0 +1,55 @@
+﻿<%@ Page Title="生产工序产量汇总表" Language="C#" MasterPageFile="~/Other/MasterPage.master" AutoEventWireup="true" CodeFile="SXJ_BLPLX.aspx.cs" Inherits="REPORT_cc_WIP_CJCLB" EnableEventValidation="false"%>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <script language="javascript" type="text/javascript">
+    </script>
+    <asp:UpdatePanel ID="UpdatePanel_Search" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <asp:Panel ID="Panel_Search" runat="server">
+                <fieldset>
+                    <legend>不良品分类统计检索栏</legend>
+                    <table style="width: 100%;">
+                    <tr style="height: 16px;">
+                          <td style="width:20%">&nbsp;</td>
+                            <td align="center" style="width:10%;">
+                                <asp:Label ID="Label2" runat="server" Text="统计时间从："></asp:Label>
+                            </td>
+                            <td style="width:20%;">
+                                <asp:TextBox ID="startime" runat="server" onfocus="new WdatePicker(this,'%Y-%M-%D',false)"
+                                    DataFormatString="{0:yyyy-MM-dd}" Width="155px"></asp:TextBox>
+                            </td>
+                            <td align="center" style="width:10%;">
+                                    <asp:Label ID="Label111" runat="server" Text="至"></asp:Label>
+                            </td>
+                            <td style="width:20%;">
+                                <asp:TextBox ID="endtime" runat="server" onfocus="new WdatePicker(this,'%Y-%M-%D',false)"
+                                    DataFormatString="{0:yyyy-MM-dd}" Width="155px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                             <td >
+                             </td>
+                        <td align="center" colspan="2">
+                            <asp:Button ID="Button2" runat="server" CssClass="Button02" Height="24px" Text="导出Excel" Width="80px" OnClick="Button2_Click" ToolTip="点击此处,直接导出Excel。"/>
+                        </td>
+                        <td align="center" colspan="2">
+                            <asp:Button ID="BtnReset" runat="server" CssClass="Button02" Height="24px" Text="重置"
+                                    Visible="true" Width="80px" OnClick="BtnReset_Click"/></td>
+                        <td align="left" >
+                        </td>
+                    </tr>
+                    </table>
+                        
+                </fieldset>
+            </asp:Panel>
+        </ContentTemplate>
+        <Triggers>
+        <asp:PostBackTrigger ControlID="Button2" />
+    </Triggers>
+    </asp:UpdatePanel>
+
+
+</asp:Content>

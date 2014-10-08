@@ -1,0 +1,198 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+/// <summary>
+///IMOutStoreL 的摘要说明
+/// </summary>
+public class IMOutStoreL
+{
+    private static readonly IIMOutStore outs = DALFactory.OutStore();
+    public IMOutStoreL()
+    {
+        //
+        //TODO: 在此处添加构造函数逻辑
+        //
+    }
+    public DataSet Select_lingliaoMain(string condition)
+    {
+        return outs.Select_lingliaoMain(condition);
+    }
+    public void Delete_lingliaoMain(Guid ID)
+    {
+        outs.Delete_lingliaoMain(ID);
+    }
+    public DataSet Select_IMIM_Mat(string condition)
+    {
+        return outs.Select_IMIM_Mat(condition);
+    }
+    public DataSet Select_IMIM_PT(string condition)
+    {
+        return outs.Select_IMIM_PT(condition);
+    }
+    public void Insert_LingliaoDetail(Guid ID, Guid IMIM_ID)
+    {
+        outs.Insert_LingliaoDetail(ID, IMIM_ID);
+    }
+    public void Insert_LingliaoMain(string man, Guid StoreID, string Depart)
+    {
+        outs.Insert_LingliaoMain(man, StoreID, Depart);
+    }
+    public DataSet Select_IMInventoryDetail(string condition)
+    {
+        return outs.Select_IMInventoryDetail(condition);
+    }
+    public DataSet Select_IMInventoryMain(string condition)
+    {
+        return outs.Select_IMInventoryMain(condition);
+    }
+    public DataSet Select_IMOuthouseDetail(string condition)
+    {
+        return outs.Select_IMOuthouseDetail(condition);
+    }
+    public DataSet Select_IMRD_SUM(string man)
+    {
+        return outs.Select_IMRD_SUM(man);
+    }
+    public void Insert_IMRD_SUM(Guid ID, string man)
+    {
+        outs.Insert_IMRD_SUM(ID, man);
+    }
+    public void Delete_IMRD_SUM(string man)
+    {
+        outs.Delete_IMRD_SUM(man);
+    }
+    public DataSet Select_IMRequisitionDetail(string condition)
+    {
+        return outs.Select_IMRequisitionDetail(condition);
+    }
+    public DataSet Select_IMStore()
+    {
+        return outs.Select_IMStore();
+    }
+    public void Update_LingliaoMain_Check(Guid RID, string Resutl, string opinion)
+    {
+        outs.Update_LingliaoMain_Check(RID, Resutl, opinion);
+    }
+    public void Update_LingliaoDetail(Guid ID)
+    {
+        outs.Update_LingliaoDetail(ID);
+    }
+    public DataSet Select_IMRequisitionMain_CheckResult(Guid ID)
+    {
+        return outs.Select_IMRequisitionMain_CheckResult(ID);
+    }
+    public DataSet Select_IMOutM(string condition)
+    {
+        return outs.Select_IMOutM(condition);
+    }
+    public DataSet Select_IMOuthouseSort(string condition)
+    {
+        return outs.Select_IMOuthouseSort(condition);
+    }
+    public void Insert_OutM(Guid sortID, Guid StoreID, string man, string company)
+    {
+        outs.Insert_OutM(sortID, StoreID, man, company);
+    }
+    public DataSet Select_Store(string depart, string man)
+    {
+        return outs.Select_Store(depart, man);
+    }
+    public void Delete_OutM(Guid id)
+    {
+        outs.Delete_OutM(id);
+    }
+    public void Delete_OutD(Guid id)
+    {
+        outs.Delete_OutD(id);
+    }
+    public void Insert_IMOutD_Yiban(Guid IMID_ID, Guid IMOHM_ID, Decimal IMOHD_Num)
+    {
+        outs.Insert_IMOutD_Yiban(IMID_ID, IMOHM_ID, IMOHD_Num);
+    }
+    public void Insert_IMOutD_Lingliao(Guid IMID_ID, Guid IMOHM_ID, Decimal IMOHD_Num, string man)
+    {
+        outs.Insert_IMOutD_Lingliao(IMID_ID, IMOHM_ID, IMOHD_Num,man);
+    }
+    public void Update_IMOutM(Guid id)
+    {
+        outs.Update_IMOutM(id);
+    }
+    public void Update_IMOutM_IMIM(Guid id, string man)
+    {
+        outs.Update_IMOutM_IMIM(id, man);
+    }
+    public void Delete_LingliaoD(Guid id)
+    {
+        outs.Delete_LingliaoD(id);
+    }
+    public void Update_LingliaoD(Guid id, decimal num, string remark)
+    {
+        outs.Update_LingliaoD(id, num, remark);
+    }
+    public void Insert_Pandian(Guid IMIM_ID, string man)
+    {
+        outs.Insert_Pandian(IMIM_ID, man);
+    }
+    public void Update_Pandian(Guid IMC_ID, decimal IMC_ActualTotalNum)
+    {
+        outs.Update_Pandian(IMC_ID, IMC_ActualTotalNum);
+    }
+    public DataSet Select_Pandian(string condition)
+    {
+        return outs.Select_Pandian(condition);
+    }
+    public void Delete_Pandian(Guid IMC_ID)
+    {
+        outs.Delete_Pandian(IMC_ID);
+    }
+    public void Insert_SalesOut_Main(Guid ID, string man, string company, string model, string modelnum)
+    {
+        outs.Insert_SalesOut_Main(ID, man, company, model, modelnum);
+    }
+
+    public void Delete_SalesOut_Temp(string man)
+    {
+        outs.Delete_SalesOut_Temp(man);
+    }
+    public void Insert_SalesOut_Deliver(Guid id, string man)
+    {
+        outs.Insert_SalesOut_Deliver(id, man);
+    }
+    public DataSet Select_Xiashoukucun(string condition)
+    {
+        return outs.Select_Xiashoukucun(condition);
+    }
+    public void Insert_IMOutD_Xiaoshou(Guid IMID_ID, string man, Decimal IMOHD_Num,Guid PID,Guid Mid)
+    {
+        outs.Insert_IMOutD_Xiaoshou(IMID_ID, man, IMOHD_Num,PID,Mid);
+    }
+    public void Update_IMOutHouseMain_Xiaoshou(string man)
+    {
+        outs.Update_IMOutHouseMain_Xiaoshou(man);
+    }
+     public void Insert_IMSalesOutTEMP(Guid id)
+     {
+        outs.Insert_IMSalesOutTEMP(id);
+     }
+     public void Delete_IMSalesOutTEMP()
+     {
+         outs.Delete_IMSalesOutTEMP();
+     }
+      public void Insert_SMOrderDeliver_SalesOut(Guid id)
+      {
+        outs.Insert_SMOrderDeliver_SalesOut(id);
+      }
+      public void Update_SMOrderDeliver_SalesOut(Guid id, string model, string num)
+      {
+          outs.Update_SMOrderDeliver_SalesOut(id, model, num);
+      }
+}

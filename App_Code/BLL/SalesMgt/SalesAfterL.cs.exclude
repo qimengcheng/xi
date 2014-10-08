@@ -1,0 +1,101 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+/// <summary>
+///SMOrderDeliverPlanL 的摘要说明
+/// </summary>
+public class SalesAfterL
+{
+    private static readonly ISalseAfter st = DALFactory.SalesAfter();
+    public SalesAfterL()
+    {
+        //
+        //TODO: 在此处添加构造函数逻辑
+        //
+    }
+            public void Insert_KesuDetail(Guid id,Guid id1,string batchnum,int num,int losenum, string re,string condition)
+            {
+                st.Insert_KesuDetail(id,id1,batchnum,num,losenum,re,condition);
+            }
+        public DataSet Select_Dingdan(string condition)
+        {
+            return st.Select_Dingdan(condition);
+        }
+        public void Update_ShouhouMain_Check(Guid id, string result,string man,string opinion)
+        {
+            st.Update_ShouhouMain_Check(id,result,man,opinion);
+        }
+        public void Update_ShouhouDetail( Guid id,string result)
+        {
+            st.Update_ShouhouDetail(id,result);
+        }
+        public void Delete_Kesu_Detail(Guid id)
+        {
+            st.Delete_Kesu_Detail(id);
+        }
+        public DataSet Select_Kehu(string condition)
+        {
+            return st.Select_Kehu(condition);
+        }
+        public void Insert_KesuMain(Guid Cid, Guid Shouhouid,Guid tousuID,int day,string remark,string man)
+        {
+            st.Insert_KesuMain(Cid,Shouhouid,tousuID,day,remark,man);
+        }
+        public DataSet Select_ShouhouDetail(Guid  condition)
+        {
+            return st.Select_ShouhouDetail( condition);
+        }
+        public DataSet Select_ShouhouMain(string condition)
+        {
+            return st.Select_ShouhouMain(condition);
+        }
+        public void Delete_TousuSort(Guid id)
+        {
+            st.Delete_TousuSort(id);
+        }
+        public void Update_ShouhouSort(Guid id, string name, string detail, string man)
+        {
+            st.Update_ShouhouSort(id,name,detail,man);
+        }
+        public void Insert_ShouhouSort(string name, string detail, string man)
+        {
+            st.Insert_ShouhouSort(name,detail,man);
+        }
+        public void Delete_ShouhouSort(Guid id)
+        {
+            st.Delete_ShouhouSort(id);
+        }
+        public void Update_TousuSort(Guid id ,string name, string detail, string man)
+        {
+            st.Update_TousuSort(id,name,detail,man);
+        }
+        public void Insert_TousuSort(string name,string detail,string man)
+        {
+            st.Insert_TousuSort(name,detail,man);
+        }
+        public DataSet Select_ShouhouSort(string condition)
+        {
+            return  st.Select_ShouhouSort(condition);
+        }
+        public DataSet Select_TousuSort(string condition)
+        {
+            return  st.Select_TousuSort(condition);
+        }
+        public void Delete_KesuMain(Guid id)
+        {
+            st.Delete_KesuMain(id);
+        }
+        public void Update_KesuDetail(Guid id, string path)
+        {
+            st.Update_KesuDetail(id, path);
+        }
+}

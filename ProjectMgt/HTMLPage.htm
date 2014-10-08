@@ -1,0 +1,1011 @@
+﻿
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+
+</title>
+    <script type="text/javascript"  src="../My97DatePicker/WdatePicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../sdmenu/sdmenu.css" /><link rel="Stylesheet" href="../css/style.css" />
+    <script type="text/javascript" src="../sdmenu/sdmenu.js"></script>
+
+  
+    <script type="text/javascript" src="../JS/jquery-1.10.2.min.js"></script>
+     
+        <script type="text/javascript">
+            /***********************************************
+            * Slashdot Menu script- By DimX
+            * Submitted to Dynamic Drive DHTML code library: http://www.dynamicdrive.com
+            * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+            ***********************************************/
+    </script>
+    <script type="text/javascript">
+        // <![CDATA[
+        var myMenu;
+        window.onload = function () {
+            myMenu = new SDMenu("my_menu");
+            myMenu.init();
+            myMenu.oneSmOnly = true;
+            myMenu.remember = true;
+            myMenu.speed = 5;
+
+
+        };
+        // ]]>
+        var nav = 0;
+
+        $(document).dblclick(function (event) {
+
+            if (nav == 0) {
+                $(".to").hide(500);
+                $("#nav").hide(500);
+                $("div.sdmenu").animate({ width: 0 }, 500);
+                $(".auto-style3").animate({ width: 0 }, 500);
+                nav = 1;
+                $("I1").animate({ width: 1200 }, 500);
+                $(".auto-style4").animate({ width: 1200 }, 500);
+
+            }
+            else if (nav == 1) {
+
+                $("div.sdmenu").animate({ width: 150 }, 500);
+                $(".auto-style3").animate({ width: 150 }, 500);
+                $("#nav").show();
+                nav = 0;
+                $("I1").animate({ width: 874 }, 500);
+                $(".auto-style4").animate({ width: 874 }, 500, function () { $(".to").fadeIn(); });
+
+            }
+
+        });
+        //$(document).ready(
+        //    function() {
+
+        //        var code = $('body').html();
+        //        code = code.replace(/\*/g, "<a class='nes'>*</a>");
+        //        $("body").empty().html(code);
+
+
+        //            $(".Button02").live("click", function () {
+        //                alert("lll");
+        //                code = $('body').html();
+        //                code = code.replace(/\*/g, "<a class='nes'>*</a>");
+        //                $("body").empty().html(code);
+        //            });
+
+        //    });
+   
+
+    </script>
+    <style type="text/css">
+        .auto-style3 {
+            width: 150px;
+            vertical-align: top;
+            }
+
+        .auto-style4 {
+            height: 452px;
+            width: 900px;
+            border: #82d1e7 1px solid;
+            padding-right: 0px;
+            padding-left: 0px;
+            background: #fbfbfb;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            box-shadow: 1px 0px 10px rgba(116, 191, 231,0.2),-1px 0px 10px rgba(116, 191, 231,0.2),0px 1px 10px rgba(116, 191, 231,0.2);
+        }
+
+        .auto-style6 {
+            padding-left: 5px;
+            font-weight: bold;
+            FILTER: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1);
+            color: #115FEE;
+            padding-top: 2px;
+            width: 434px;
+        }
+    </style>
+    </head>
+<body  background-image: url('../images/back01.jpg'); background-repeat: repeat-x; background-color: #404040;>
+    <form name="aspnetForm" method="post" action="PRMProjectMaintenance.aspx" id="aspnetForm" class="warn" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var theForm = document.forms['aspnetForm'];
+    if (!theForm) {
+        theForm = document.aspnetForm;
+    }
+    function __doPostBack(eventTarget, eventArgument) {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+            theForm.__EVENTTARGET.value = eventTarget;
+            theForm.__EVENTARGUMENT.value = eventArgument;
+            theForm.submit();
+        }
+    }
+//]]>
+</script>
+
+
+<script src="/0401Test/WebResource.axd?d=BnwQ0lcWbvvj2fswHcDpdLRp917zDX-CP14Ut-bCnsfdiHcF3lvyGOEvrzqxT5LLMblRtW31uV5uQzPl8ALAHKrFPn5IprhlDvq-w2rSP6o1&amp;t=635195661120000000" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    alert('不支持此文件格式!')//]]>
+</script>
+
+<script src="/0401Test/ScriptResource.axd?d=OCfDkSfonqfUK0LkHTBQsVQYywIQZOMUTWms_apsnnNid9BF4_3nA7liIKgs-o-eqK4ypyxRwG-5lOPDANPdEUYHY5uNEXQovS1sqQ514t9sVlSsZWvb_vvnqxolgRXXVazaY0BK5V_FS-7VTtbTzpuN2_XoQrRV-BiWzqiPOAlCNjxch1xU0dKwTD3JexYy0&amp;t=ca758f3" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+    if (typeof (Sys) === 'undefined') throw new Error('ASP.NET Ajax 客户端框架未能加载。');
+//]]>
+</script>
+
+<script src="/0401Test/ScriptResource.axd?d=tekhuZHCIROx3ZqW7JF3BdLiXLn4ef2LnCDCfKUBvak2cmxvZyI188OfrVcFX-fNTolqCRjwxvr9yWRNo1AwBoE1gvssBP0vCigVhenfROI5Uqa-ZJK8jDnlMshHvHlicDEm2It8btZtrPwS0CstUG8NZGNbCmCsHTL1-u52Qi8C9S2-cM53tL3MH6COfAeQ0&amp;t=ca758f3" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="80F00108" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="4XGSlR3tS6LXekQnH9bMiYEdSed0Jzbg+MTRHZV+RT5BjcUsGUSQXw6mxwweMZjL88c1smpiL5SbHn5q/8fX+CdI0NrtxGH6bwGbeeufa84ucNCrQY2Y1BSf/oMmvREzdkc4LuTI6p/bZgJgDuZx1RFp10mpUi6txaujRCvpdgyqmRIekDKhLGBDgNA/t0zBZBdqBbShJnYHEMbfS9KIszE/Jdl37SnvCHj0/fPvBUyBDFD2nQBc+rAhgRWWaU8aPJC1pMKpJemZFSn1123s2f0iNFknvAK5QICVrnMQNDEfJ6pFY8XGprR3bzZoLD7a6KI5TVQ97rErcH2Zq1VlxF95qTdGVZv5JM13F7o/V1j/uKS3DurL/oZ6c3eSbH9MW9RSgj/38gOPWPkgtHm1+yCjtnpRtIf3irsQMILPOJDiqvViJUbAcOxe/yjW/NauHDBNiYW/+ZJN7UImaDkmzh57lAJ9gDty0Go5CYJsXtM8yW+bkaXAC6vTdmyKv8NscPOLhnUh+2bcTb24nMw16nv+SFh7quYb+BeYhKdLXp0fipMvBDWbNyGbCyi2HUf9TUTKTF6iHzim8zttPHHi+oW91eU62wRFurUiABfUAUiz7XlRtyMOIWGz/dzihmXI3xv06FSvABG+X1n8yfjZeyABKTtzPB2z1b5U1qVC2MkZcvd+Q7yZVpsYwNeyn/5EjVibtVrI65eYMtBDkN3bV51aH3OCRxMgE02pp8Gmdl+yoFxZN/l3zTeO9+kyhNL6Z4j/IaU06O2WUD9WYesI/ZUz3Whi1jIEI3JPzcU3diyvmiB+06z1ZDQdysMHQNVw1G0PO5+fzKFAzId6FIVicLN0XvS10P7tKvX9AwO93Vkk92IRdtxHJjw45Fdmt/l5DvvXTh+wFPmOIUOZqmc6ir0fGdi1nieGbQE2Lwye6za+sIODqHv3GCMn1zS0jW/l9y967vykn2zZs2Akp/vvj22kAGZs9Exj/hgDkVCuXmFZBX+1Xaeo1wCgUrscks+n/uxLRxRruUoqgfyL88FnsPrrrVSmSHcxsB8CxWTcxWw4HOH4vxZV9P7znqAP56amtO6e6oAtv5GRDlxSaKTcg/2M2KSvhRTxsU/x5j6Af0BRBZlMLB93ORcB9OfziYbEypPfKbIFbXHEOyVxlDMwEO5763xZk50YQsYnCPDOjaGWHdTE3oVdNAqTuWz0ROc0TcAAielvnUk7atr9d9ctkeN9TNrX2fiKBVvAn5RXqMNzgZd8Go3lxdh1G540fxQyUZBfYbHi3Hsq99PK8ps1+6tZ3i939QvtBp3lBfHeDV9gQ7QkoS/NLUHcZSmynxIeLqUD39gdCuVX78RyUCeyO8oSbgi81aXlE27NBLiJ8X6XAvXtfhUihX5V0xMWbP3d6jUMk19BbrplkgGIIXAk/Q==" />
+</div>
+        <div>
+            <img id="ctl00_Image1" src="../images/banner%E5%BE%AE%E8%BD%AF%E9%A3%8E%E6%A0%BC.jpg" style="width:1024px;border-width:0px;" />
+            <table style="width: 1024px;">
+                <tr>
+                    <td class="auto-style3" id="nav">
+                        <div height="30px">
+                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="a" style="background-color: #eeeeee; height: 58px;">
+                                <tr style="height: 43px;">
+                                    <td height="43">
+                                        <div class="to">
+
+                                            <a id="ctl00_HyperPerson" href="../UserMgt/UMChangePassword.aspx" style="display:inline-block;border-width:0px;height:40px;width:40px;"><img src="../images/set.jpg" alt="" style="border-width:0px;" /></a>
+                                            <br />
+                                            <a href="../UserMgt/UMChangePassword.aspx">修改密码</a>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div style="text-align: center" class="to">
+                                            <a id="ctl00_HyperLogout" href="../Other/Logout.aspx" style="display:inline-block;border-width:0px;height:40px;width:40px;"><img src="../images/out.jpg" alt="" style="border-width:0px;" /></a>
+                                            <br />
+                                            <a href="../Other/Logout.aspx">退出系统</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div style="float: left; text-align: left" id="my_menu" class="sdmenu">
+                        <div>
+                            <span>系统管理</span>
+                            <a href="../Other/WelcomePage.aspx">欢迎页面</a>
+                            <a href="../BasicDataMgt/OrganizationManagement.aspx" id="ctl00_zzjggl">组织机构管理</a>
+                            <a href="../UserMgt/UserManage.aspx" id="ctl00_usermanage">用户管理</a>
+                            
+                        </div>
+
+
+                          <div class="collapsed">
+                            <span>销售管理</span>
+                           <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanLook" id="ctl00_SalesMonthPlanLook">销售月计划查看</a>                   
+                               <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanEdit" id="ctl00_SalesMonthPlanEdit">销售月计划维护</a>
+                               <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanSign" id="ctl00_SalesMonthPlanSign">销售月计划会签</a>
+                                 <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanCheck" id="ctl00_SalesMonthPlanCheck">销售月计划审核</a>
+                                   <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanCheckNew" id="ctl00_SalesMonthPlanCheckNew">新增销售月计划审核</a>
+                               <a href="../SalesMgt/SalesWeekPlan.aspx?status=SalesWeekPlanLook" id="ctl00_SalesWeekPlanLook">销售周计划查看</a>
+                                  <a href="../SalesMgt/SalesWeekPlan.aspx?status=SalesWeekPlanEdit" id="ctl00_SalesWeekPlanEdit">销售周计划维护</a>
+                            <a href="../SalesMgt/SalesWeekPlan.aspx?status=SalesWeekPlanSign" id="ctl00_SalesWeekPlanSign">销售周计划会签</a>
+                            <a href="../SalesMgt/SalesOrder.aspx?status=SalesOrderLook" id="ctl00_SalesOrderLook">销售订单查看</a>
+                            <a href="../SalesMgt/SalesOrder.aspx?status=SalesOrderEdit" id="ctl00_SalesOrderEdit">销售订单维护</a>
+                           <a href="../SalesMgt/SMOrderDeliverPlan.aspx?status=SalesPlanLook" id="ctl00_SalesPlanLook">销售发货计划查看</a>
+                           <a href="../SalesMgt/SMOrderDeliverPlan.aspx?status=SalesPlanEdit" id="ctl00_SalesPlanEdit">销售发货计划维护</a>
+                            <a href="../SalesMgt/SalesReturn.aspx?status=SalesLook" id="ctl00_SalesLook">销售退货查看</a>
+                            <a href="../SalesMgt/SalesReturn.aspx?status=SalesResult" id="ctl00_SalesResult">销售退货处理结果维护</a>
+                            <a href="../SalesMgt/SalesReturn.aspx?status=SalesMangement" id="ctl00_SalesMangement">销售收货退货管理</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceLook" id="ctl00_SalesPriceLook">价格账期查看</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceEdit" id="ctl00_SalesPriceEdit">价格账期维护</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceApplyEdit" id="ctl00_SalesPriceApplyEdit">价格账期申请维护</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceApplyLook" id="ctl00_SalesPriceApplyLook">价格账期申请查看</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceApplyCheck" id="ctl00_SalesPriceApplyCheck">价格账期申请审核</a>
+                            <a href="../SalesMgt/SalesPayBill.aspx?status=SalesPayBillLook" id="ctl00_SalesPayBillLook">销售回款开票查看</a>
+                            <a href="../SalesMgt/SalesPayBill.aspx?status=SalesPayBillEdit" id="ctl00_SalesPayBillEdit">销售回款开票维护</a>
+                            <a href="../SalesMgt/SalesPayBill.aspx?status=SalesPayBillAdmin" id="ctl00_SalesPayBillAdmin">客户金额维护(总表)</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesTousuSortLook" id="ctl00_SalesTousuSortLook">投诉类别查看</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesTousuSortEdit" id="ctl00_SalesTousuSortEdit">投诉类别维护</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterSortLook" id="ctl00_SalesAfterSortLook">售后类别查看</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterSortEdit" id="ctl00_SalesAfterSortEdit">售后类别维护</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterMainLook" id="ctl00_SalesAfterMainLook">客诉主表查看</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterMainEdit" id="ctl00_SalesAfterMainEdit">客诉主表维护</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterAnalysis" id="ctl00_SalesAfterAnalysis">客诉分析结果录入</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterCheck" id="ctl00_SalesAfterCheck">客诉分析结果审核</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>客户关系管理</span>
+                            <a href="../Client/ClientBasic.aspx?status=GegionSee" id="ctl00_CB1">客户区域基础数据查看</a>
+                            <a href="../Client/ClientBasic.aspx?status=GegionMange" id="ctl00_A13">客户区域基础数据维护</a>
+                             <a href="../Client/ClientBasic.aspx?status=SortSee" id="ctl00_A14">客户类别基础数据查看</a>
+                              <a href="../Client/ClientBasic.aspx?status=SortMange" id="ctl00_A15">客户类别基础数据维护</a>
+
+                            <a href="../Client/ClientInfo.aspx?status=ClientInfoSee" id="ctl00_CI2">客户信息查看</a>
+                            <a href="../Client/ClientInfo.aspx?status=ClientInfoMange" id="ctl00_A19">客户信息维护</a>
+                            
+                           
+<a href="../Laputa/sample.aspx?state=manage" id="ctl00_PP_WIPControl">公司样品管理</a>
+                            <a href="../Laputa/sample.aspx?state=look" id="ctl00_A12">公司样品查看</a>
+                            <a href="CRMOutsideSample.aspx" id="ctl00_PP_MApply">外送样品管理</a>
+                            
+                           
+
+
+
+                        </div>
+
+                        <div class="collapsed">
+                            <span>项目管理</span>
+                            <a href="PMPRMProject.aspx?state=Supply" id="ctl00_ProjectSupply">项目申请</a>
+                            <a href="PMPRMProject.aspx?state=Check" id="ctl00_ProjectCheck">项目审核</a>
+                            <a href="PMPPRMProjectSchedule.aspx?state=Look" id="ctl00_ScheduleLook">项目进度查看</a>
+                            <a href="PMPPRMProjectSchedule.aspx?state=arrange" id="ctl00_Sarrange">项目部门设置</a>
+                            <a href="PMPPRMProjectSchedule.aspx?state=Setting" id="ctl00_SSetting">项目进度设置</a>
+                            <a href="PRMProjectMaintenance.aspx" id="ctl00_Maintenance">项目进度维护</a>
+
+                           
+
+                        </div>
+                        <div class="collapsed">
+                            <span>采购管理</span>
+                           <a href="../PurchasingMgt/PMPSupply.aspx" id="ctl00_PSupply">供应商信息维护</a>
+                            <a href="../PurchasingMgt/PMPSupply.aspx?state=Look" id="ctl00_SLook">供应商信息查看</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificApply" id="ctl00_CertificApply">供应商认证申请制定</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificApplyLook" id="ctl00_CertificApplyLook">供应商认证申请查看</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificEdit" id="ctl00_CertificEdit">供应商认证信息填写</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificSign" id="ctl00_CertificSign">供应商认证会签</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificPreCheck" id="ctl00_CertificPreCheck">供应商认证技术副总审核</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificCheck" id="ctl00_CertificCheck">供应商认证总经理审核</a>
+                            
+                            <a href="../PurchasingMgt/PurchasingPlan.aspx?status=PurchasingPlanLook" id="ctl00_PurchasingPlanLook">采购计划查看</a>
+                  <a href="../PurchasingMgt/PurchasingPlan.aspx?status=PurchasingPlanEdit" id="ctl00_PurchasingPlanEdit">采购计划维护</a>
+                  <a href="../PurchasingMgt/PurchasingPlan.aspx?status=PurchasingPlanCheck" id="ctl00_PurchasingPlanCheck">采购计划审核</a>
+                   <a href="../PurchasingMgt/PurchasingPlan.aspx?status=PurchasingPlanBuy" id="ctl00_PurchasingPlanBuy">采购计划执行</a>
+                    <a href="../PurchasingMgt/PurchasingPlan.aspx?status=PurchasingPlanMatBuy" id="ctl00_PurchasingPlanMatBuy">材料周计划执行</a>
+                           
+                            <a href="../PurchasingMgt/PMPApplyRule.aspx" id="ctl00_ApplyRule">采购申请规则制定</a>
+                            <a href="../PurchasingMgt/PMSupplyMaterial.aspx?state=Make" id="ctl00_PMake">采购申请制定</a>
+                            <a href="../PurchasingMgt/PMSupplyMaterial.aspx?state=Check" id="ctl00_MCheck">采购申请审核</a> 
+                            <a href="../PurchasingMgt/PMSupplyMaterial.aspx?state=Emergency" id="ctl00_Emergency">紧急采购申请</a>
+                            <a href="../PurchasingMgt/PMPurchaseApplyMaintain.aspx" id="ctl00_Maintain">采购申请执行维护</a>
+                            <a href="../PurchasingMgt/PMPurchaseOrder.aspx" id="ctl00_Order">采购订单</a>
+                            <a href="../PurchasingMgt/PMPaymentBill.aspx?state=Bill" id="ctl00_Bill">采购开票</a>
+                             <a href="../PurchasingMgt/PMPaymentBill.aspx?state=Paid" id="ctl00_Paid">采购付款</a>
+                            <a href="../PurchasingMgt/PMEquipment.aspx?state=Make" id="ctl00_EMake">设备采购申请制定</a>
+            <a href="../PurchasingMgt/PMEquipment.aspx?state=ESupplyCheck" id="ctl00_ESupplyCheck">设备采购申请审核</a>
+             <a href="../PurchasingMgt/PMEquipment.aspx?state=ESupplyPurchase" id="ctl00_ESupplyPurchase">设备采购</a>
+             <a href="../PurchasingMgt/PMEquipment.aspx?state=ESupplyTest" id="ctl00_ESupplyTest">设备采购调试</a>
+              <a href="../PurchasingMgt/PMEquipment.aspx?state=EAcceptCheck" id="ctl00_EAcceptCheck">设备采购验收审核</a>
+                            <a href="../PurchasingMgt/PMCopperFoundry.aspx" id="ctl00_Foundry">铜材代工</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>库存管理</span>
+                           <a href="../InventoryMgt/IMMaterialBasicDataManagement.aspx?status=IMMaterialBasicSearch" id="ctl00_IMMaterialBasicSearch">物料基础数据查看</a>
+                            <a href="../InventoryMgt/IMMaterialBasicDataManagement.aspx?status=IMMaterialBasicEdit" id="ctl00_IMMaterialBasicEdit">物料基础数据维护</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=SeeSSd" id="ctl00_SB1">库房出入库类别查看</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=EdditSSd" id="ctl00_SB2">库房出入库类别维护</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=SeeStore" id="ctl00_SB3">库房基础数据查看</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=SeeAreal" id="ctl00_SB4">库房区域查看</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=EditStore" id="ctl00_SB5">库房基础数据维护</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=INSLook" id="ctl00_INSLook">入库单查询</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=PurINS" id="ctl00_PurINS">采购入库</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=PTINS" id="ctl00_PTINS">成品入库</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=REINS" id="ctl00_REINS">退货入库</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=OtherINS" id="ctl00_OtherINS">其他入库</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoLook" id="ctl00_LingliaoLook">领料单查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoEdit" id="ctl00_LingliaoEdit">领料单维护</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoCheck" id="ctl00_LingliaoCheck">领料单审核</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=OutLook" id="ctl00_OutLook">出库单查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=OutEdit" id="ctl00_OutEdit">出库单维护</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=InventoryLook" id="ctl00_InventoryLook">库存查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=PandianLook" id="ctl00_PandianLook">库存盘点查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=Pandian" id="ctl00_Pandian">库存盘点维护</a>
+                            <a href="../InventoryMgt/IMOutStore.aspx?status=SalesOut" id="ctl00_SalesOut">销售出库</a>
+                            <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoOut" id="ctl00_LingliaoOut">领料出库</a>
+                            <a href="../InventoryMgt/IMOver.aspx?status=BaofeiLook" id="ctl00_BaofeiLook">库存报废申请查看</a>
+                            <a href="../InventoryMgt/IMOver.aspx?status=BaofeiApply" id="ctl00_BaofeiApply">库存报废申请维护</a>
+                             <a href="../InventoryMgt/IMOver.aspx?status=BaofeiAnalysis" id="ctl00_BaofeiAnalysis">库存报废分析</a>
+                              <a href="../InventoryMgt/IMOver.aspx?status=BaofeiCheck" id="ctl00_BaofeiCheck">库存报废审核</a>
+                              <a href="../InventoryMgt/IMOver.aspx?status=BaofeiZhixing" id="ctl00_BaofeiZhixing">库存报废执行</a>
+                         <a href="../InventoryMgt/IMDiaobo.aspx?status=DiaoboLook" id="ctl00_DiaoboLook">调拨查询</a>
+                            <a href="../InventoryMgt/IMDiaobo.aspx?status=DiaoboOut" id="ctl00_DiaoboOut">调出管理</a>
+                            <a href="../InventoryMgt/IMDiaobo.aspx?status=DiaoboLIn" id="ctl00_DiaoboLIn">调入管理</a>
+                        </div>
+
+
+                        <div class="collapsed">
+                            <span>工艺管理</span>
+                            <a href="../CraftMgt/CraftBasicInfoMgt.aspx" id="ctl00_gongyijichu">工艺基础信息管理</a>
+                            <a href="../CraftMgt/ProcessCraftMgt.aspx" id="ctl00_gongxu">工序维护</a>
+                            <a href="../Laputa/BOM.aspx?state=look" id="ctl00_bomchakan">BOM查看</a>
+                            <a href="../Laputa/BOM.aspx?state=manage" id="ctl00_bomweihu">BOM维护</a>
+                            <a href="../CraftMgt/ProcessRouteMgt.aspx?state=manage" id="ctl00_prmgt">工艺路线管理</a>
+                            <a href="../CraftMgt/ProcessRouteMgt.aspx?state=look" id="ctl00_prlook">工艺路线查看</a>
+                            <a href="../Laputa/Proclass2.aspx?state=manage" id="ctl00_proclass">产品分档管理</a>  
+                            <a href="../Laputa/Proclass2.aspx?state=look" id="ctl00_proclasslook">产品分档查看</a>  
+
+
+                        </div>
+                        <div class="collapsed">
+                            <span>生产基础信息管理</span>
+                             <a href="../ProductionBasicInfo/PBIProductBaiscInfoMgt.aspx?state=manage" id="ctl00_cpjcxx">产品基础信息维护</a>
+                             <a href="../ProductionBasicInfo/PBIProductBaiscInfoMgt.aspx?state=look" id="ctl00_cpxxck">产品基础信息查看</a>
+                            <a href="../ProductionBasicInfo/ProMainSeries.aspx?state=manage" id="ctl00_cpdxhgl">产品大型号管理</a>
+						   <a href="../ProductionBasicInfo/ProMainSeries.aspx?state=look" id="ctl00_cpdxhck">产品大型号查看</a>
+						   <a href="../ProductionBasicInfo/OverTimeOption.aspx" id="ctl00_csyywh">超时原因选项维护</a>
+                            <a href="../ProductionBasicInfo/PBIProductErrorInfo.aspx" id="ctl00_ycxxwh">异常原因现象选项维护</a>
+
+                        </div>
+                        <div class="collapsed">
+                            <span>产能核定</span>
+                     <a href="../Capacity/CapacityBasic.aspx?state=manage" id="ctl00_cnhdjcxxwh">产能核定基础信息维护</a>
+					 <a href="../Capacity/CapacityBasic.aspx?state=look" id="ctl00_cnhdjcxxck">产能核定基础信息查看</a>
+                     <a href="../Capacity/CapacityInfo.aspx?state=manage" id="ctl00_cnhdwh">产能核定维护</a>
+                     <a href="../Capacity/CapacityInfo.aspx?state=look" id="ctl00_cnhdck">产能核定查看</a>
+
+
+                        </div>
+                        <div class="collapsed">
+                            <span>生产计划管理</span>
+                           <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=manage" id="ctl00_scyjhgl">生产月计划管理</a>
+                           <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=review" id="ctl00_scyjhsh">生产月计划审核</a>
+                            <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=look" id="ctl00_scyjhck">生产月计划查看</a>
+                            <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=manage" id="ctl00_sczjhgl">生产周计划管理</a>
+                           <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=review" id="ctl00_sczjhsh">生产周计划审核</a>
+                            <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=look" id="ctl00_sczjhck">生产周计划查看</a>
+                             <a href="../Laputa/MMP.aspx?state=look" id="ctl00_clzjhck">材料月计划查看</a>
+                             <a href="../Laputa/MMP.aspx?state=make" id="ctl00_clyjhzd">材料月计划制定</a>
+                             <a href="../Laputa/MMP.aspx?state=audit" id="ctl00_clyjhsh">材料月计划审核</a>
+                            <a href="../Laputa/WMP.aspx?state=look" id="ctl00_cailzjhck">材料周计划查看</a>
+                             <a href="../Laputa/WMP.aspx?state=make" id="ctl00_clzjhzd">材料周计划制定</a>
+                             <a href="../Laputa/WMP.aspx?state=audit" id="ctl00_clzjhsh">材料周计划审核</a>
+
+
+
+                        </div>
+
+                        <div class="collapsed">
+                            <span>生产过程管理</span>
+                          <a href="../ProductionProcess/WorkOrderCreate.aspx" id="ctl00_sgdsc">随工单生成</a>
+                          <a href="../ProductionProcess/ErrorRelevant.aspx?state=clycjy" id="ctl00_clycjy">材料异常检验</a>
+					      <a href="../ProductionProcess/ErrorRelevant.aspx?state=yccl" id="ctl00_yccl">异常处理</a>
+					      <a href="../ProductionProcess/ErrorRelevant.aspx?state=ycgz" id="ctl00_ycgz">异常跟踪</a>
+						  <a href="../ProductionProcess/ErrorRelevant.aspx?state=ycja" id="ctl00_ycja">异常结案</a>
+						  <a href="../ProductionProcess/ErrorRelevant.aspx?state=look" id="ctl00_ycsh">异常审核</a>
+						  <a href="../ProductionProcess/ErrorRelevant.aspx?state=look" id="ctl00_ychq">异常会签</a>
+						    <a href="../ProductionProcess/ErrorRelevant.aspx?state=look" id="ctl00_ycfg">异常返工</a>
+						    <a href="../ProductionProcess/ErrorRelevant.aspx?state=look" id="ctl00_ycck">异常查看</a>
+                            <a href="../ProductionProcess/WorkOrderCheck.aspx" id="ctl00_zzpck">在制品查看</a>
+                            <a href="../ProductionProcess/WorkOrderDivided.aspx" id="ctl00_sgdfd">随工单分单</a>
+                            <a href="../ProductionProcess/WorkOrderCombine.aspx" id="ctl00_sgdhd">随工单合单</a>
+                            <a href="../WorkOrderSalary/WOSSalary.aspx?state=manage" id="ctl00_gjxlwh">工价系列维护</a>
+						    <a href="../WorkOrderSalary/WOSSalary.aspx?state=look" id="ctl00_gjxlck">工价系列查看</a>
+                            <a href="../WorkOrderSalary/WorkingTeam.aspx?state=manage" id="ctl00_bzxxwh">班组信息维护</a>
+						    <a href="../WorkOrderSalary/WorkingTeam.aspx?state=look" id="ctl00_bzxxck">班组信息查看</a>
+                            <a href="../WorkOrderSalary/ZhuangPeiJiJian.aspx?state=manage" id="ctl00_zpjjwh">装配计件维护</a>
+							<a href="../WorkOrderSalary/ZhuangPeiJiJian.aspx?state=look" id="ctl00_zpjjck">装配计件查看</a>
+                            <a href="../WorkOrderSalary/SalaryDayCalculate.aspx?state=manage" id="ctl00_jsjjrhs">计时计件日核算制定</a>
+							<a href="../WorkOrderSalary/SalaryDayCalculate.aspx?state=review" id="ctl00_jsjjrhssh">计时计件日核算审核</a>
+							<a href="../WorkOrderSalary/SalaryDayCalculate.aspx?state=look" id="ctl00_jsjjrck">计时计件日核算查看</a>
+                            <a href="../WorkOrderSalary/TimeSalary.aspx?state=manage" id="ctl00_scjsrtb">生产计时日提报制定</a>
+							<a href="../WorkOrderSalary/TimeSalary.aspx?state=look" id="ctl00_scjsrtbck">生产计时日提报查看</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>生产跟踪管理</span> 
+                             <a href="../ProductionTrack/OEMOrderTrack.aspx" id="ctl00_jgddgz">加工订单跟踪</a>
+                             <a href="../Laputa/ProductPlanTrack.aspx" id="ctl00_scjhgz">生产计划跟踪</a>
+                             <a href="../ProductionTrack/ShengChanPanCun.aspx" id="ctl00_scxpc">生产线盘存</a>
+                             </div>
+                        <div class="collapsed">
+                              <span>生产问题产品处理</span>
+                            <a href="../Laputa/DefectProduct.aspx?state=look" id="ctl00_wtcpck">生产问题产品查看</a>
+                            <a href="../Laputa/DefectProduct.aspx?state=manage" id="ctl00_wtcpgl">生产问题产品管理</a>
+                             <a href="../Laputa/DefectProduct.aspx?state=track" id="ctl00_wtcpgz">生产问题产品跟踪</a>
+                            <a href="../Laputa/DefectProduct.aspx?state=audit" id="ctl00_wtcpsh">生产问题产品审核</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>进料检验管理</span>
+                            <a href="../IQCMgt/IQCItemsMgt.aspx?state=Item" id="ctl00_Item">检验项目维护</a>
+                            <a href="../IQCMgt/IQCCertificationMgt.aspx?state=Certification" id="ctl00_Certification">认证信息维护</a>
+                            <a href="../IQCMgt/IQCMgt.aspx?state=IQCMgt" id="ctl00_IQCMgt">待检物料检验\认证</a>
+                            <a href="../IQCMgt/IQCAuMgt.aspx?state=IQCAuMgt" id="ctl00_IQCAuMgt">进料检验审核</a>
+                            <a href="../IQCMgt/IQCAuMgt.aspx?state=IQCAuMgtReview" id="ctl00_IQCAuMgtReview">进料检验查看</a>
+                            
+                        </div>
+                        <div class="collapsed">
+                            <span>实验测试管理</span>
+                            <a href="../ExperimentTest/ETExpTestBasicInfoMgt.aspx?state=Item" id="ctl00_Item1">实验项目维护</a>
+                            <a href="../ExperimentTest/ETSampleTypeMgt.aspx?state=Sample" id="ctl00_Sample">样品类型维护</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=Submit" id="ctl00_Submit">实验申请提交</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppAu" id="ctl00_AppAu">实验申请审核</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppAck" id="ctl00_AppAck">实验申请接收</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppRes" id="ctl00_AppRes">实验结果录入</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppArl" id="ctl00_AppArl">实验结果审批</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppView" id="ctl00_AppView">实验进度追踪</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>HSF有毒物质管理</span>
+                            <a href="../HSFMgt/HSFBasicDataMgt.aspx?state=Item">有毒物质基础数据维护</a>
+                            <a href="../HSFMgt/HSFMaterialCIMgt.aspx?state=MaItem">物料管制项目维护</a>
+                            <a href="../HSFMgt/HSFMaterialCIMgt.aspx?state=MaItem">有毒物质管理</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>计量器具管理</span>
+                            <a href="../MeasApplianceMgt/MeasApplianceMgt.aspx?state=MeasAppliance" id="ctl00_MeasAppliance">计量器具维护</a>
+                            <a href="../MeasApplianceMgt/MeasApplianceMgt.aspx?state=MeasApplianceLook" id="ctl00_MeasApplianceLook">计量器具查看</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>型式实验管理</span>
+                            <a href="../TypeTestMgt/TypeTestMgt.aspx?status=Typetest" id="ctl00_Typetest">型式实验管理</a>
+                            <a href="../TypeTestMgt/TypeTestMgt.aspx?status=Typetestlook" id="ctl00_Typetestlook">型式实验查看</a>
+                        </div>
+
+                        <div class="collapsed">
+                            <span>设备管理</span>
+                                
+                                 <a href="../EquipMgt/EMEquipType.aspx?status=EMType" id="ctl00_EMType">设备类型管理</a>
+                                 <a href="../EquipMgt/EMEquipName_Model.aspx?status=EMName" id="ctl00_EMName">设备基础信息管理</a>
+                                 <a href="../EquipMgt/EMEquipmentInf.aspx?status=EMInf" id="ctl00_EMInf">设备台账管理</a>
+                                 <a href="../EquipMgt/EMEquipmentInf.aspx?status=EMLookInf" id="ctl00_EMLookInf">设备台账查看</a>
+                                 
+                                 <a href="../EquipMgt/EMEquipUpkeepItem.aspx?status=EMItem" id="ctl00_EMItem">设备保养项目管理</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMMake" id="ctl00_EMMake">设备保养计划制定</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMLookP" id="ctl00_EMLookP">设备保养计划查看</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMGen" id="ctl00_EMGen">设备保养计划生成</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMStar" id="ctl00_EMStar">设备保养开始确认</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMDealP" id="ctl00_EMDealP">设备保养情况记录</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMHis" id="ctl00_EMHis">设备保养历史记录查看</a>
+                                 
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxApp" id="ctl00_EMWxApp">设备故障维修申请</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxAck" id="ctl00_EMWxAck">设备故障维修确认</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCnDeal" id="ctl00_EMCnDeal">设备故障维修情况记录</a>
+                                 
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcApp" id="ctl00_EMCcApp">出厂维修审批</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcExpect" id="ctl00_EMCcExpect">出厂维修预算</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcFinan" id="ctl00_EMCcFinan">出厂维修财务审核</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcConfirmor" id="ctl00_EMCcConfirmor">出厂维修出厂确认</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcAct" id="ctl00_EMCcAct">出厂维修回厂信息完善</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcFinanConfirmor" id="ctl00_EMCcFinanConfirmor">出厂维修财务确认</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcLook" id="ctl00_EMCcLook">出厂维修查看</a>
+                                 
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxCheck" id="ctl00_EMWxCheck">设备故障维修验收</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxLook" id="ctl00_EMWxLook">设备故障维修查看</a>
+                                 
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMApp" id="ctl00_EMApp">设备报废申请</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMApproval" id="ctl00_EMApproval">设备报废审批</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMDeal" id="ctl00_EMDeal">设备报废处理</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMLook" id="ctl00_EMLook">设备报废情况查看</a>
+
+                        </div>
+                       <div class="collapsed">
+        <span>人事档案管理</span>
+        <a href="../HRFilesMgt/HRPostMaintance.aspx?status=postLook" id="ctl00_postLook">人事岗位查看</a>
+        <a href="../HRFilesMgt/HRPostMaintance.aspx?status=postMain" id="ctl00_postMain">人事岗位维护</a>
+        <a href="../HRFilesMgt/HRETypeMaintance.aspx?status=typeLook" id="ctl00_typeLook">员工类型查看</a>
+        <a href="../HRFilesMgt/HRETypeMaintance.aspx?status=typeMain" id="ctl00_typeMain">员工类型维护</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=documentLook" id="ctl00_documentLook">人事档案查看</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=documentMain" id="ctl00_documentMain">人事档案维护</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=salaryLook" id="ctl00_salaryLook">人员调薪记录查看</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=salaryMain" id="ctl00_salaryMain">人员调薪管理</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=changeLook" id="ctl00_changeLook">人事异动查看</a>
+         <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=changeMain" id="ctl00_changeMain">人事异动管理</a>
+    </div>
+                        <div class="collapsed">
+                            <span>培训管理</span>
+                            <a href="../TrainningMgt/NETItemMaintenance.aspx?status=itemsLook" id="ctl00_itemsLook">新员工培训项目查看</a>
+                            <a href="../TrainningMgt/NETItemMaintenance.aspx?status=itemsMain" id="ctl00_itemsMain">新员工培训项目维护</a>
+                            <a href="../TrainningMgt/NewEmpInfoAdd.aspx?status=newEAdd" id="ctl00_newEAddAdd">新员工培训信息新建</a>
+                            <a href="../TrainningMgt/NewEmpTeacherAssign.aspx?status=TeacherAssign" id="ctl00_TeacherAssign">新员工培训主讲人分配</a>
+                            <a href="../TrainningMgt/NewEmpScoreInput.aspx?status=ScoreInput" id="ctl00_ScoreInput">新员工培训结果录入</a>
+                            <a href="../TrainningMgt/NewEmpResuls.aspx?status=LookResult" id="ctl00_LookResult">新员工培训结果查看</a>
+                            <a href="../TrainningMgt/TrainingTypeMaintenance.aspx?status=TraType" id="ctl00_TraType">培训类型维护</a>
+                            <a href="../TrainningMgt/TrainingYearPlan.aspx?status=TraTYearLook" id="ctl00_TraTYearLook">培训年度计划查看</a>
+                            <a href="../TrainningMgt/TrainingYearPlan.aspx?status=TraTYear" id="ctl00_TraTYear">培训年度计划维护</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=ItemMgt" id="ctl00_ItemMgt">培训计划安排</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=MonthDetail" id="ctl00_MonthDetail">培训计划详情查看</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=ResultInput" id="ctl00_ResultInput">培训成绩录入</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=ResultReview" id="ctl00_ResultReview">培训记录查看</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>薪资管理</span>
+                            <a href="../SalaryMgt/SalaryAccountSetMaintanance.aspx?status=Set" id="ctl00_Set">薪资账套维护</a>
+                            <a href="../SalaryMgt/SalaryTimeItemMaintanance.aspx?status=Time" id="ctl00_Time">计时项目维护</a>
+                            <a href="../SalaryMgt/SalaryPieceworkItemMaintanance.aspx?status=Piecework" id="ctl00_Piecework">计件项目维护</a>
+                            <a href="../SalaryMgt/SalaryTimeDayCalculate.aspx?status=TimeDayCalculate" id="ctl00_TimeDayCalculate">计时工资日计算</a>
+                            <a href="../SalaryMgt/SalaryPieceDayCalculate.aspx?status=PieceDayCalculate" id="ctl00_PieceDayCalculate">计件工资日计算</a>
+                            <a href="../SalaryMgt/SalaryTimeDayCalculate.aspx?status=TimeDayCheck" id="ctl00_TimeDayCheck">计时工资日审核</a>
+                            <a href="../SalaryMgt/SalaryPieceDayCalculate.aspx?status=PieceDayCheck" id="ctl00_PieceDayCheck">计件工资日审核</a>
+                            <a href="../SalaryMgt/SalaryMonthCalculate.aspx?status=MonthCalculate" id="ctl00_MonthCalculate">薪资月度结算</a>
+                            <a href="../SalaryMgt/SalaryMonthCalculate.aspx?status=MonthAudit" id="ctl00_MonthAudit">薪资月度审核</a>
+                            <a href="../SalaryMgt/SalaryMonthCalculate.aspx?status=MonthSearch" id="ctl00_MonthSearch">薪资月度查看</a>
+                            <a href="../SalaryMgt/SalaryReview.aspx?status=Review" id="ctl00_Review">薪资个人查看</a>
+
+                        </div>
+                        <div class="collapsed">
+                            <span>绩效管理</span>
+                            <a href="../HRPerfMgt/HRPDetailView.aspx?status=PerMainView" id="ctl00_PerMainView">绩效基础数据查看</a>
+                            <a href="../HRPerfMgt/HRPDetailMgt.aspx?status=PerMain" id="ctl00_PerMain">绩效基础数据维护</a>
+                            <a href="../HRPerfMgt/HRPerfInput.aspx?status=PerInfoInput" id="ctl00_PerInfoInput">绩效考核信息录入</a>
+                            <a href="../HRPerfMgt/HRPerfCheck.aspx?status=PerAudit" id="ctl00_PerAudit">绩效考核结果审核</a>
+                            <a href="../HRPerfMgt/HRPerfReview.aspx?status=PerReview" id="ctl00_PerReview">绩效考核结果查看</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>受控文件管理</span>
+                            <a href="../ControlledDocMgt/BasicCode.aspx?status=BasicCode" id="ctl00_BasicCode">受控文件基础数据维护</a>
+                            <a href="../ControlledDocMgt/BasicCode.aspx?status=BasicLook" id="ctl00_BasicLook">受控文件基础数据查看</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocApp" id="ctl00_ControlDocApp">受控文件申请</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocSpecil" id="ctl00_ControlDocSpecil">分发特殊文件编号</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocAu" id="ctl00_ControlDocAu">受控文件主管审核</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocSign" id="ctl00_ControlDocSign">受控文件会签</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocApprov" id="ctl00_ControlDocApprov">受控文件审批</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocLook" id="ctl00_ControlDocLook">受控文件申请查看</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocDown" id="ctl00_ControlDocDown">受控文件下载</a>
+                        </div>
+
+    </div>
+
+                    </td>
+
+                    <td valign="top" id="con">
+                        <div id="I1"style="border-color: inherit; border-width: 0; height: 100%;width:100%; text-align: left;" >
+
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" class="auto-style7">
+                                            <table style="height: 25px; background-image: url('../images/main_28.gif'); border-top-left-radius: 14px; border-top-right-radius: 14px; border-color: #c7dce2; border-left: 1px solid #c7dce2; border-right: 1px solid #c7dce2; width: 100%; box-shadow: 1px 0px 10px rgba(116, 191, 231,0.2),-1px 0px 10px rgba(116, 191, 231,0.2),0px -1px 10px rgba(116, 191, 231,0.2);">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="auto-style6"></td>
+                                                        <td width="120">
+                                                            <span id="ctl00_LabelUserName">欢迎UESTC(999)登陆</span>
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="auto-style7">
+                                            <table cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="auto-style4" valign="top">
+
+
+
+
+
+                                                            
+    <script type="text/javascript">
+//<![CDATA[
+        Sys.WebForms.PageRequestManager._initialize('ctl00$ContentPlaceHolder1$ScriptManager1', 'aspnetForm', ['tctl00$ContentPlaceHolder1$UpdatePanel_ProjectSearch', '', 'tctl00$ContentPlaceHolder1$UpdatePanel_ProjectInfo', '', 'tctl00$ContentPlaceHolder1$UpdatePanel2', '', 'tctl00$ContentPlaceHolder1$UpdatePanel_Pschedule', '', 'tctl00$ContentPlaceHolder1$UpdatePanel4', '', 'tctl00$ContentPlaceHolder1$UpdatePanel_Postpone', '', 'tctl00$ContentPlaceHolder1$UpdatePanel3', '', 'tctl00$ContentPlaceHolder1$UpdatePanel_WorkOrder', '', 'tctl00$ContentPlaceHolder1$UpdatePanel1', ''], [], ['ctl00$ContentPlaceHolder1$Button13', ''], 90, 'ctl00');
+//]]>
+</script>
+
+    
+    <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script> 
+    <div id="ctl00_ContentPlaceHolder1_UpdatePanel_ProjectSearch">
+	
+            <div id="ctl00_ContentPlaceHolder1_Panel_ProjectSearch">
+		
+                <fieldset>
+                    <legend> 项目查询</legend>
+                    
+                    
+                    
+                
+    <table style="width: 100%;">
+         
+         
+             
+            
+             
+             
+             
+        <tr>
+        <td style="width: 15%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label1">产品型号：</span>
+            </td>
+            <td style="width: 12%" align="left">
+                <input name="ctl00$ContentPlaceHolder1$TextBox1" type="text" id="ctl00_ContentPlaceHolder1_TextBox1" />
+            </td>
+            <td style="width: 15%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label">项目类型：</span>
+            </td>
+            <td style="width: 15%" align="left">
+                <select name="ctl00$ContentPlaceHolder1$DropDownList1" id="ctl00_ContentPlaceHolder1_DropDownList1" style="width:121px;">
+			<option selected="selected" value="请选择">请选择</option>
+			<option value="工艺改进">工艺改进</option>
+			<option value="设备改进">设备改进</option>
+			<option value="新产品开发">新产品开发</option>
+
+		</select>
+            </td>
+            <td style="width: 15%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label15">项目名称：</span>
+            </td>
+            <td style="width: 17%" align="left">
+                <input name="ctl00$ContentPlaceHolder1$ProjectName" type="text" id="ctl00_ContentPlaceHolder1_ProjectName" />
+            </td>
+            </tr>
+            <tr>
+            <td style="width: 15%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label5">项目编号：</span>
+            </td>
+            
+            <td style="width: 17%" align="left">
+                <input name="ctl00$ContentPlaceHolder1$PRMP_ID" type="text" id="ctl00_ContentPlaceHolder1_PRMP_ID" />
+            </td> <td style="width: 15%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label9">是否有样品：</span>
+            </td>
+           <td style="width: 15%" align="left">
+                <select name="ctl00$ContentPlaceHolder1$DropDownList4" id="ctl00_ContentPlaceHolder1_DropDownList4" style="width:121px;">
+			<option selected="selected" value="请选择">请选择</option>
+			<option value="是">是</option>
+			<option value="否">否</option>
+
+		</select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button1" value="检索" id="ctl00_ContentPlaceHolder1_Button1" class="Button02" style="height:24px;width:70px;" />
+            </td>
+           
+            <td colspan="3" align="center">
+                
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button3" value="重置" id="ctl00_ContentPlaceHolder1_Button3" class="Button02" style="height:24px;width:70px;" />
+            </td>
+        </tr>
+    </table>
+     </fieldset>
+            
+	</div>
+        
+</div>
+   
+    <div id="ctl00_ContentPlaceHolder1_UpdatePanel_ProjectInfo">
+	
+        <div id="ctl00_ContentPlaceHolder1_Panel_ProjectInfo">
+		
+            <fieldset>
+                <legend>项目列表</legend>
+                <div>
+			<table class="GridViewStyle" cellspacing="0" cellpadding="0" border="0" id="ctl00_ContentPlaceHolder1_Gridview_ProjectInfo" style="width:100%;border-collapse:collapse;">
+				<tr class="GridViewHead">
+					<td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ProjectNum&#39;)">项目编号</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ProjectName&#39;)">项目名称</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ProductMode&#39;)">产品型号</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ProjectType&#39;)">项目类型</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_Sample&#39;)">是否有样品</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ImproveAim&#39;)">改进目的</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ImproveRequest&#39;)">改进要求</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ProjectStates&#39;)">项目状态</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo&#39;,&#39;Sort$PRMP_ResponDepart&#39;)">责任部门</a></td><td>&nbsp;</td>
+				</tr><tr class="GridViewSelectedRowStyle" style="background-color:SkyBlue;">
+					<td title="20140401">20140401</td><td title="linux">linux</td><td title="D25SB100;  D25SB80;  ">D25SB100;  D25S...</td><td title="新产品开发">新产品开发</td><td title="是">是</td><td title="ceshi new product">ceshi new produ...</td><td title="null">null</td><td title="进度延期">进度延期</td><td title="人事部">人事部</td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview_ProjectInfo_ctl02_btnLook1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo$ctl02$btnLook1&#39;,&#39;&#39;)">进度维护</a>
+                            </td>
+				</tr><tr class="GridViewAlternatingRowStyle">
+					<td title="2014406">2014406</td><td title="暗暗">暗暗</td><td title="D25SB80;  D25SB80S;  ">D25SB80;  D25SB...</td><td title="工艺改进">工艺改进</td><td title="否">否</td><td title="翻跟斗风格">翻跟斗风格</td><td title="cbcvb ">cbcvb </td><td title="进度设置完成">进度设置完成</td><td title="&amp;nbsp;">&nbsp;</td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview_ProjectInfo_ctl03_btnLook1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview_ProjectInfo$ctl03$btnLook1&#39;,&#39;&#39;)">进度维护</a>
+                            </td>
+				</tr>
+			</table>
+		</div>
+                
+	</div>
+        
+</div>
+    
+      <div id="ctl00_ContentPlaceHolder1_UpdatePanel2">
+	
+        <div id="ctl00_ContentPlaceHolder1_Panel2">
+		
+            <fieldset>
+                <legend>进度明细表</legend>
+                
+                <div>
+			<table class="GridViewStyle" cellspacing="0" cellpadding="0" border="0" id="ctl00_ContentPlaceHolder1_Gridview2" style="text-decoration:none;width:100%;border-collapse:collapse;">
+				<tr>
+					<td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_ScheduleName&#39;)">项目进度</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_Num&#39;)">进度序号</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_ScheduleContent&#39;)">进度内容</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_ScheduleFinish&#39;)">是否完成</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_ProcessCondition&#39;)">进展情况</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_WorkOrderNum&#39;)">涉及随工单号</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_Accessory&#39;)">是否有附件</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_ScheduleRelay&#39;)">是否延期</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_RelayDay&#39;)">延期天数</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_RelayReason&#39;)">延期原因</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_AccNum&#39;)">附件编号</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2&#39;,&#39;Sort$PRMPS_AccName&#39;)">附件名称</a></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+				</tr><tr class="GridViewRowStyle">
+					<td title="1" style="width:100px;">1</td><td title="1" style="width:100px;">1</td><td title="nihao">nihao</td><td title="否">否</td><td title="111">111</td><td title="D25FDA002;">D25FDA002;</td><td title="是">是</td><td title="是">是</td><td title="0">0</td><td title="爱上大声地">爱上大声地</td><td title="123">123</td><td title="123">123</td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl02_BTLay" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl02$BTLay&#39;,&#39;&#39;)">延期</a>
+                                   
+                            </td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl02_BTProtect" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl02$BTProtect&#39;,&#39;&#39;)">维护</a>
+                                   
+                            </td><td>
+                               <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl02_Down2" CommandArgument="file/20140509123426希尔ERP系统多部门会签.docx" href="../file/20140509123426%E5%B8%8C%E5%B0%94ERP%E7%B3%BB%E7%BB%9F%E5%A4%9A%E9%83%A8%E9%97%A8%E4%BC%9A%E7%AD%BE.docx?path={0}">附件证明查看</a>
+                            </td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl02_BTFollow" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl02$BTFollow&#39;,&#39;&#39;)">随工单跟踪</a>
+                                   
+                            </td>
+				</tr><tr class="GridViewSelectedRowStyle">
+					<td title="2" style="width:100px;">2</td><td title="2" style="width:100px;">2</td><td title="12">12</td><td title="否">否</td><td title="阿士大夫撒地方">阿士大夫撒地方</td><td title="QA-D25FDH001;">QA-D25FDH001;</td><td title="是">是</td><td title="&amp;nbsp;">&nbsp;</td><td title="0">0</td><td title="&amp;nbsp;">&nbsp;</td><td title="4546">4546</td><td title="斯蒂芬斯蒂芬">斯蒂芬斯蒂芬</td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl03_BTLay" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl03$BTLay&#39;,&#39;&#39;)">延期</a>
+                                   
+                            </td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl03_BTProtect" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl03$BTProtect&#39;,&#39;&#39;)">维护</a>
+                                   
+                            </td><td>
+                               <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl03_Down2" CommandArgument="file/20140509012845希尔ERP系统多部门会签.docx" href="../file/20140509012845%E5%B8%8C%E5%B0%94ERP%E7%B3%BB%E7%BB%9F%E5%A4%9A%E9%83%A8%E9%97%A8%E4%BC%9A%E7%AD%BE.docx?path={0}">附件证明查看</a>
+                            </td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl03_BTFollow" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl03$BTFollow&#39;,&#39;&#39;)">随工单跟踪</a>
+                                   
+                            </td>
+				</tr><tr class="GridViewRowStyle">
+					<td title="3" style="width:100px;">3</td><td title="3" style="width:100px;">3</td><td title="2">2</td><td title="否">否</td><td title="&amp;nbsp;">&nbsp;</td><td title="&amp;nbsp;">&nbsp;</td><td title="&amp;nbsp;">&nbsp;</td><td title="&amp;nbsp;">&nbsp;</td><td title="0">0</td><td title="&amp;nbsp;">&nbsp;</td><td title="&amp;nbsp;">&nbsp;</td><td title="&amp;nbsp;">&nbsp;</td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl04_BTLay" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl04$BTLay&#39;,&#39;&#39;)">延期</a>
+                                   
+                            </td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl04_BTProtect" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl04$BTProtect&#39;,&#39;&#39;)">维护</a>
+                                   
+                            </td><td>
+                               <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl04_Down2" CommandArgument="" href="../?path={0}">附件证明查看</a>
+                            </td><td>
+                                <a id="ctl00_ContentPlaceHolder1_Gridview2_ctl04_BTFollow" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$Gridview2$ctl04$BTFollow&#39;,&#39;&#39;)">随工单跟踪</a>
+                                   
+                            </td>
+				</tr>
+			</table>
+		</div>
+                        </table>
+                        <table width="100%">
+                        <tr>
+                        <td  align="center">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button22" value="关闭" id="ctl00_ContentPlaceHolder1_Button22" class="Button02" style="height:24px;width:70px;" />
+            </td>
+                        </tr>
+                     </table>
+           </fieldset>
+                
+	</div>
+        
+</div>
+
+     <div id="ctl00_ContentPlaceHolder1_UpdatePanel_Pschedule">
+	
+              <div id="ctl00_ContentPlaceHolder1_Panel_Pschedule">
+		  
+                <fieldset>
+                    <legend> 进度维护</legend>
+                    
+    <table style="width: 100%;">
+         
+        <tr>
+        <td  align="right" colspan="1">
+             <span id="ctl00_ContentPlaceHolder1_Label3">项目编号：</span>
+            </td>
+            <td colspan="1"align="left">
+                <input name="ctl00$ContentPlaceHolder1$TextBox7" type="text" value="2" id="ctl00_ContentPlaceHolder1_TextBox7" disabled="disabled" onkeyup="this.value=this.value.replace(/[^0-9]/g,&#39;&#39;)" onafterpaste="this.value=this.value.replace(/[^0-9]/g,&#39;&#39;)" />
+            </td>
+            <td colspan="1" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label4">项目名称：</span>
+            </td>
+             <td colspan="1" align="left">
+                <input name="ctl00$ContentPlaceHolder1$TextBox8" type="text" value="linux" id="ctl00_ContentPlaceHolder1_TextBox8" disabled="disabled" />
+            </td>
+            <td colspan="1" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label6">项目进度：</span>
+            </td>
+            <td colspan="1" align="left">
+                <input name="ctl00$ContentPlaceHolder1$TextBox9" type="text" value="2" id="ctl00_ContentPlaceHolder1_TextBox9" disabled="disabled" />
+            </td>
+            </tr>
+            <tr>
+            <td align="right" colspan="1">
+                <span id="ctl00_ContentPlaceHolder1_Label13">该项目进度是否完成：</span>
+            </td>
+            
+            <td colspan="1" align="left">
+        <select name="ctl00$ContentPlaceHolder1$DropDownList3" id="ctl00_ContentPlaceHolder1_DropDownList3" style="height:16px;width:125px;">
+			<option value="请选择">请选择</option>
+			<option value="是">是</option>
+			<option selected="selected" value="否">否</option>
+
+		</select>
+                 <span id="ctl00_ContentPlaceHolder1_Label26" style="color:Red;">*</span>
+            </td>
+             <td  align="left" colspan="1">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button4" value="上传附件" id="ctl00_ContentPlaceHolder1_Button4" class="Button02" style="height:24px;width:90px;" />
+            </td>
+          </tr>
+            <tr>
+            <td align="right" colspan="1"> 
+                <span id="ctl00_ContentPlaceHolder1_Label7">随工单选择：</span>
+                </td>
+             <td colspan="3">                                                
+                 <input name="ctl00$ContentPlaceHolder1$TextBox10" type="text" value="QA-D25FDH001;" id="ctl00_ContentPlaceHolder1_TextBox10" disabled="disabled" style="height:80px;width:570px;" />
+                <span id="ctl00_ContentPlaceHolder1_Label27" style="color:Red;">*</span>
+                </td>
+               
+                
+            <td  align="left" colspan="2">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button7" value="选择随工单" id="ctl00_ContentPlaceHolder1_Button7" class="Button02" style="height:24px;width:90px;" />
+            </td>
+            </tr>
+            
+            <tr>
+             <td align="right" colspan="1">
+                <span id="ctl00_ContentPlaceHolder1_Label12">进展情况：</span>
+               <br/>
+                         <span id="ctl00_ContentPlaceHolder1_Label19">(200字以内)</span>
+                </td>
+                <td  align="left"  colspan="6">
+                <textarea name="ctl00$ContentPlaceHolder1$TextBox11" rows="2" cols="20" id="ctl00_ContentPlaceHolder1_TextBox11" onkeyup="this.value = this.value.substring(0, 200)" onafterpaste="this.value = this.value.substring(0, 200)" style="height:72px;width:720px;">
+阿士大夫撒地方</textarea>
+                         <span id="ctl00_ContentPlaceHolder1_Label28" style="color:Red;">*</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button_TijiaoWeihu" value="提交" id="ctl00_ContentPlaceHolder1_Button_TijiaoWeihu" class="Button02" style="height:24px;width:70px;" />
+            </td>
+            <td colspan="2" align="left">
+            </td>
+            <td colspan="2" align="left">
+                
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button6" value="关闭" id="ctl00_ContentPlaceHolder1_Button6" class="Button02" style="height:24px;width:70px;" />
+            </td>
+        </tr>
+    </table>
+     </fieldset>
+      
+	</div>
+        
+</div>
+    <div id="Panel4" >
+     <div id="ctl00_ContentPlaceHolder1_UpdatePanel4">
+	
+             
+                <fieldset>
+                    <legend> 附件上传</legend>
+                     
+                     
+    <table style="width: 100%;">
+    <tr style="height: 16px;">
+    <td style="width: 16%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label17">附件编号：</span>
+            </td>
+             <td style="width: 17%" align="left">
+                <input name="ctl00$ContentPlaceHolder1$TextBox14" type="text" value="4546" id="ctl00_ContentPlaceHolder1_TextBox14" />
+                <span id="ctl00_ContentPlaceHolder1_Label29" style="color:Red;">*</span>
+            </td>
+           
+             <td align="right" style="width: 17%">
+                <span id="ctl00_ContentPlaceHolder1_Label18">附件名称：</span>
+            </td>
+             <td style="width: 17%" align="left">
+                <input name="ctl00$ContentPlaceHolder1$TextBox15" type="text" value="斯蒂芬斯蒂芬" id="ctl00_ContentPlaceHolder1_TextBox15" />
+                <span id="ctl00_ContentPlaceHolder1_Label30" style="color:Red;">*</span>
+            </td>
+    <td style="width: 17%" align="right">
+                <span id="ctl00_ContentPlaceHolder1_Label14">上传文件：</span>
+               
+                </td>
+                 <td style="width: 17%" align="left">
+                     <input type="file" name="ctl00$ContentPlaceHolder1$FileUpload1" id="ctl00_ContentPlaceHolder1_FileUpload1" />
+                   <span id="ctl00_ContentPlaceHolder1_Label31" style="color:Red;">*</span>
+            </td>
+            
+            </tr>
+            <tr>
+            <td  align="center" colspan="1">
+            </td>
+             <td  align="center" colspan="2">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button13" value="提交" id="ctl00_ContentPlaceHolder1_Button13" class="Button02" style="height:24px;width:90px;" />
+            </td>
+             <td  align="center" colspan="2">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button14" value="关闭" id="ctl00_ContentPlaceHolder1_Button14" class="Button02" style="height:24px;width:90px;" />
+            </td>
+            </tr>
+     </table>
+     </fieldset>
+        
+</div>
+  </div>
+
+
+      <div id="ctl00_ContentPlaceHolder1_UpdatePanel_Postpone">
+	
+            
+        
+</div>
+  
+   
+   <div id="ctl00_ContentPlaceHolder1_UpdatePanel3">
+	
+            
+        
+</div>
+
+     <div id="ctl00_ContentPlaceHolder1_UpdatePanel_WorkOrder">
+	
+        
+        
+</div>
+   
+    <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+	
+        
+        
+</div>
+    
+
+    
+
+
+
+
+
+                                                        </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <table  style="border-style: none;width:100%; height: 74%" border="0" cellspacing="0" cellpadding="0">
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+
+                                    <td width="814" class="STYLE1" />
+                                    <span style="color: #404040; font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 乐山希尔电子有限公司版权所有©2013      </span>
+
+                                </tr>
+                            </table>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+
+
+
+            </table>
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+    document.getElementById('Panel4').style.display = 'none';//]]>
+</script>
+</form>
+</body>
+</html>

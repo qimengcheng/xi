@@ -1,0 +1,61 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+/// <summary>
+///SMOrderDeliverPlanL 的摘要说明
+/// </summary>
+public class SalesPriceL
+{
+    private static readonly ISalsePrice sp = DALFactory.SalesPrice();
+    public SalesPriceL()
+    {
+        //
+        //TODO: 在此处添加构造函数逻辑
+        //
+    }
+       public DataSet Select_PT(string condition)
+       {
+        return sp.Select_PT(condition);
+       }
+           public void Delete_Apply(Guid id)
+      {  
+        sp.Delete_Apply(id);
+      }
+      public DataSet Select_Apply(string condition)
+      {
+        return sp.Select_Apply(condition);
+      }
+      public void Update_Apply(Guid id,decimal price, int day, string reason)
+      {
+        sp.Update_Apply(id,price,day,reason);
+      }
+      public void Insert_Apply(Guid id,decimal price ,int day,string name,string reason)
+      {
+        sp.Insert_Apply(id,price,day,name,reason);
+      }
+      public void Update_TousuSort(Guid cID,Guid pID,Decimal price,int day,string man)
+      {
+        sp.Update_TousuSort(cID,pID,price,day,man);
+      }
+      public void Delete_JiageZhangqi(Guid id)
+      {
+        sp.Delete_JiageZhangqi(id);
+      }
+      public DataSet Select_JiageZhangqi(string condition)
+      {
+          return sp.Select_JiageZhangqi(condition);
+      }
+      public void Update_Apply_Check(Guid id, string result, string op, string man)
+      {
+          sp.Update_Apply_Check(id, result, op, man);
+      }
+}

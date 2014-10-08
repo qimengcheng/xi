@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Data.SqlClient;
+using System.Collections;
+using EquipmentMangementAjax.DBUtility;
+
+/// <summary>
+///CRMOutsideSampleL 的摘要说明
+/// </summary>
+public class CRMOutsideSampleL
+{
+    private static readonly ICRMOutsideSample PMP = DALFactory.CreateCRMOutsideSample();
+	public CRMOutsideSampleL()
+	{
+		//
+		//TODO: 在此处添加构造函数逻辑
+		//
+	}
+    public DataSet SelectCRMOutsideSample(string condition)
+    {
+        return PMP.SelectCRMOutsideSample(condition);
+    }
+    public void InsertCRMOutsideSample(CRMOutsideSampleinfo cRMOutsideSampleinfo)
+    {
+        PMP.InsertCRMOutsideSample(cRMOutsideSampleinfo);
+    }
+    public void UpdateCRMOutsideSample(CRMOutsideSampleinfo cRMOutsideSampleinfo)
+    {
+        PMP.UpdateCRMOutsideSample(cRMOutsideSampleinfo);
+    }
+    public void DeleteCRMOutsideSample(CRMOutsideSampleinfo cRMOutsideSampleinfo)
+    {
+        PMP.DeleteCRMOutsideSample(cRMOutsideSampleinfo);
+    }
+    public void UpdateCRMOutsideSample_Analysis(CRMOutsideSampleinfo cRMOutsideSampleinfo)
+    {
+        PMP.UpdateCRMOutsideSample_Analysis(cRMOutsideSampleinfo);
+    }
+
+}

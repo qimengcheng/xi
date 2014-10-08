@@ -1,0 +1,855 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript"  src="../My97DatePicker/WdatePicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../sdmenu/sdmenu.css" />
+    <link rel="Stylesheet" href="../css/style.css" />
+    <script type="text/javascript" src="../sdmenu/sdmenu.js"></script>
+
+  
+    <script type="text/javascript" src="../JS/jquery-1.10.2.min.js"></script>
+     
+        <script type="text/javascript">
+            /***********************************************
+            * Slashdot Menu script- By DimX
+            * Submitted to Dynamic Drive DHTML code library: http://www.dynamicdrive.com
+            * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+            ***********************************************/
+        </script>
+    <script type="text/javascript">
+   
+      function sessionTimeout() {
+
+            var lblMinute = document.getElementById("<%=lblMinute.ClientID%>");
+            var lblTime = document.getElementById("<%=lblTime.ClientID%>");
+            var minute = parseInt(lblMinute.value);
+            var seconds = parseInt(lblTime.value);
+           
+            if (seconds == 0 && minute > 0) {
+                minute = minute - 1;
+                seconds = 59;
+            }
+            else {
+                seconds = seconds - 1;
+            }
+            lblMinute.value = minute.toString()+"：" ;
+            lblTime.value = seconds.toString();
+            if (minute == 0 && seconds == 0) {
+                alert("您已超时");
+                window.location.href = "../Default.aspx";//转到登陆页 
+                clearInterval(sessionTimeout);
+            }
+      }
+        function resetsessionTimeout() {
+            var lblMinute = document.getElementById("<%=lblMinute.ClientID%>");
+            var lblTime = document.getElementById("<%=lblTime.ClientID%>");
+
+
+            lblMinute.value = "10:";
+             lblTime.value = "0";
+           
+         }
+        window.setInterval(sessionTimeout, 1000);
+    </script>
+    <script type="text/javascript">
+        // <![CDATA[
+        var myMenu;
+        window.onload = function () {
+            myMenu = new SDMenu("my_menu");
+            myMenu.init();
+            myMenu.oneSmOnly = true;
+            myMenu.remember = true;
+            myMenu.speed = 20;
+
+
+        };
+        // ]]>
+        var nav = 0;
+
+        //$(document).dblclick(function (event) {
+
+        //    if (nav == 0) {
+        //        $(".to").hide(500);
+        //        $("#nav").hide(500);
+        //        $("div.sdmenu").animate({ width: 0 }, 500);
+        //        $(".auto-style3").animate({ width: 0 }, 500);
+        //        nav = 1;
+        //        $("I1").animate({ width: 1200 }, 500);
+        //        $(".auto-style4").animate({ width: 1200 }, 500);
+
+        //    }
+        //    else if (nav == 1) {
+
+        //        $("div.sdmenu").animate({ width: 150 }, 500);
+        //        $(".auto-style3").animate({ width: 150 }, 500);
+        //        $("#nav").show();
+        //        nav = 0;
+        //        $("I1").animate({ width: 874 }, 500);
+        //        $(".auto-style4").animate({ width: 874 }, 500, function () { $(".to").fadeIn(); });
+
+        //    }
+
+        //});
+        $(document).click(function(event) {
+            resetsessionTimeout();
+        });
+        $(document).ready(
+            function() {
+
+                $(".collapsed").not(':has("a")').hide();
+              
+                
+            });
+      
+    </script>
+    
+    <style type="text/css">
+        .auto-style3 {
+            width: 150px;
+            vertical-align: top;
+            }
+
+        .auto-style4 {
+            height: 452px;
+            width: 900px;
+            border: #82d1e7 1px solid;
+            padding-right: 0px;
+            padding-left: 0px;
+            background: #fbfbfb;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            box-shadow: 1px 0px 10px rgba(116, 191, 231,0.2),-1px 0px 10px rgba(116, 191, 231,0.2),0px 1px 10px rgba(116, 191, 231,0.2);
+        }
+
+        .auto-style6 {
+            padding-left: 5px;
+            font-weight: bold;
+            FILTER: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1);
+            color: #115FEE;
+            padding-top: 2px;
+            width: 334px;
+        }
+    </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/images/banner微软风格.jpg" Width="1024px" />
+            <table style="width: 1024px;">
+                <tr>
+                    <td class="auto-style3" id="nav">
+                        <div height="30px">
+                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="a" style="background-color: #eeeeee; height: 58px;">
+                                <tr style="height: 43px;">
+                                    <td height="43">
+                                        <div class="to">
+
+                                            <asp:HyperLink ID="HyperPerson" runat="server" Height="40px" Width="40px" BorderWidth="0px" NavigateUrl="../UserMgt/UMChangePassword.aspx" ImageUrl="~/images/set.jpg"></asp:HyperLink>
+                                            <br />
+                                            <a href="../UserMgt/UMChangePassword.aspx">修改密码</a>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div style="text-align: center" class="to">
+                                            <asp:HyperLink ID="HyperLogout" runat="server" ImageUrl="~/images/out.jpg" Height="40px" Width="40px" BorderWidth="0px" NavigateUrl="~/Other/Logout.aspx"></asp:HyperLink>
+                                            <br />
+                                            <a href="../Other/Logout.aspx">退出系统</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div style="float: left; text-align: left" id="my_menu" class="sdmenu">
+                        <div>
+                            <span>系统管理</span>
+                            <a href="../Other/WelcomePage.aspx">欢迎页面</a>
+                            <a href="../BasicDataMgt/OrganizationManagement.aspx" id="zzjggl" runat="server">组织机构管理</a>
+                            <a href="../UserMgt/UserManage.aspx" id="usermanage" runat="server">用户管理</a>
+                            <%--<a href="../test/Default.aspx">测试报表</a>--%>
+                        </div>
+
+
+                          <div class="collapsed">
+                            <span>销售管理</span>
+                           <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanLook" id="SalesMonthPlanLook" runat="server">销售月计划查看</a>                   
+                               <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanEdit" id="SalesMonthPlanEdit"  runat="server">销售月计划维护</a>
+                               <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanSign" id="SalesMonthPlanSign"  runat="server">销售月计划会签</a>
+                                 <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanCheck" id="SalesMonthPlanCheck"  runat="server">销售月计划审核</a>
+                                   <a href="../SalesMgt/SalesMonthPlan.aspx?status=SalesMonthPlanCheckNew" id="SalesMonthPlanCheckNew"  runat="server">新增销售月计划审核</a>
+                               <a href="../SalesMgt/SalesWeekPlan.aspx?status=SalesWeekPlanLook" id="SalesWeekPlanLook"  runat="server">销售周计划查看</a>
+                                  <a href="../SalesMgt/SalesWeekPlan.aspx?status=SalesWeekPlanEdit" id="SalesWeekPlanEdit"  runat="server">销售周计划维护</a>
+                            <a href="../SalesMgt/SalesWeekPlan.aspx?status=SalesWeekPlanSign" id="SalesWeekPlanSign"  runat="server">销售周计划会签</a>
+                            <a href="../SalesMgt/SalesOrder.aspx?status=SalesOrderLook" id="SalesOrderLook" runat="server">销售订单查看</a>
+                            <a href="../SalesMgt/SalesOrder.aspx?status=SalesOrderEdit" id="SalesOrderEdit" runat="server">销售订单维护</a>
+                               <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceLook" id="SalesPriceLook" runat="server">价格账期查看</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceEdit" id="SalesPriceEdit" runat="server">价格账期维护</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceApplyLook" id="SalesPriceApplyLook" runat="server">价格账期申请查看</a>
+                            <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceApplyCheck" id="SalesPriceApplyCheck" runat="server">价格账期申请审核</a>
+                              <a href="../SalesMgt/SalesPrice.aspx?status=SalesPriceApplyEdit" id="SalesPriceApplyEdit" runat="server">价格账期申请审批</a>
+                            <a href="../SalesMgt/SalesPayBill.aspx?status=SalesPayBillLook" id="SalesPayBillLook" runat="server">销售回款开票查看</a>
+                            <a href="../SalesMgt/SalesPayBill.aspx?status=SalesPayBillEdit" id="SalesPayBillEdit" runat="server">销售回款开票维护</a>
+                            <a href="../SalesMgt/SalesPayBill_Begin.aspx" id="SalesPayBillAdmin" runat="server">客户初始金额维护</a>
+                           <a href="../SalesMgt/SMOrderDeliverPlan.aspx?status=SalesPlanLook" id="SalesPlanLook" runat="server">销售发货计划查看</a>
+                           <a href="../SalesMgt/SMOrderDeliverPlan.aspx?status=SalesPlanEdit" id="SalesPlanEdit" runat="server">销售发货计划维护</a>
+                              <a href="../SalesMgt/SMOrderDeliverPlan.aspx?status=SalesPlanApplyEdit" id="SalesPlanApplyEdit" runat="server">特殊发货申请查看</a>
+                               <a href="../SalesMgt/SMOrderDeliverPlan.aspx?status=SalesPlanApplyCheck" id="SalesPlanApplyCheck" runat="server">特殊发货申请审核</a>
+                              <a href="../SalesMgt/SalesReturnReason.aspx?status=SalesResultReason" id="SalesResultReason" runat="server">退货原因基础数据</a>
+                              <a href="../SalesMgt/SalesReturn.aspx?status=SalesMangement" id="SalesMangement" runat="server">销售收货退货管理</a>
+                            <a href="../SalesMgt/SalesReturn.aspx?status=SalesLook" id="SalesLook" runat="server">销售退货查看</a>
+                            <a href="../SalesMgt/SalesReturn.aspx?status=SalesResult" id="SalesResult" runat="server">销售退货处理结果维护</a>
+                            <a href="../SalesMgt/SMSalesMan.aspx?status=Sort" id="SalesManSort" runat="server">业务员类别管理</a>
+                              <a href="../SalesMgt/SMSalesMan.aspx?status=Man" id="SalesMan" runat="server">销售业务员管理</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesTousuSortLook" id="SalesTousuSortLook" runat="server">投诉类别查看</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesTousuSortEdit" id="SalesTousuSortEdit" runat="server">投诉类别维护</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterSortLook" id="SalesAfterSortLook" runat="server">售后类别查看</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterSortEdit" id="SalesAfterSortEdit" runat="server">售后类别维护</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterMainLook" id="SalesAfterMainLook" runat="server">客诉主表查看</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterMainEdit" id="SalesAfterMainEdit" runat="server">客诉主表维护</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterAnalysis" id="SalesAfterAnalysis" runat="server">客诉分析结果录入</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterCheck" id="SalesAfterCheck" runat="server">客诉分析结果审核</a>
+							 <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterNodeEdit" id="SalesAfterNodeEdit" runat="server">客诉追踪环节设置</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterTrackEdit" id="SalesAfterTrackEdit" runat="server">客诉追踪信息录入</a>
+                            <a href="../SalesMgt/SalesAfter.aspx?status=SalesAfterTrackLook" id="SalesAfterTrackLook" runat="server">客诉追踪信息查看</a>
+                         <a href="../SalesMgt/ProTypePrice.aspx" id="ProTypePrice" runat="server">产品底价录入</a>
+                          </div>
+                        <div class="collapsed">
+                            <span>客户关系管理</span>
+                            <a href="../Client/ClientBasic.aspx?status=GegionSee" id="CB1" runat="server" visible="true" >客户区域基础数据查看</a>
+                            <a href="../Client/ClientBasic.aspx?status=GegionMange" id="A13" runat="server" visible="true" >客户区域基础数据维护</a>
+                             <a href="../Client/ClientBasic.aspx?status=SortSee" id="A14" runat="server" visible="true" >客户类别基础数据查看</a>
+                              <a href="../Client/ClientBasic.aspx?status=SortMange" id="A15" runat="server" visible="true" >客户类别基础数据维护</a>
+                            <a href="../Client/ClienSort.aspx?status=SortSee" id="SortSee1" runat="server" visible="true" >客户领域基础数据查看</a>
+                              <a href="../Client/ClienSort.aspx?status=SortMange" id="SortMange1" runat="server" visible="true" >客户领域基础数据维护</a>
+                            <a href="../Client/ClientInfo.aspx?status=ClientInfoSee" id="CI2" runat="server" visible="true" >客户信息查看</a>
+                            <a href="../Client/ClientInfo.aspx?status=ClientInfoMange" id="A19" runat="server" visible="true" >客户信息维护</a>
+                            
+                           
+<a href="../Laputa/sample.aspx?state=manage" id="PP_WIPControl" runat="server" visible="false">公司样品管理</a>
+                            <a href="../Laputa/sample.aspx?state=look" id="gsypck" runat="server" visible="false">公司样品查看</a>
+                               <a href="../ProjectMgt/CRMOutsideSample.aspx?status=Look" id="WailaiLook" runat="server" visible="true">外来样品查看</a>
+                            <a href="../ProjectMgt/CRMOutsideSample.aspx?status=Edit" id="WailaiEdit" runat="server" visible="true">外来样品维护</a>
+                            <a href="../ProjectMgt/CRMOutsideSample.aspx?status=Check" id="WailaiCheck" runat="server" visible="true">外来样品审核</a>
+                            <a href="../ProjectMgt/CRMOutsideSample.aspx?status=Analysis" id="WailaiAnalysis" runat="server" visible="true">外来样品分析</a>
+                            <a href="../ProjectMgt/CRMNewCustormDevelop.aspx" id="PP_MCheck_MFG" runat="server" visible="true">新客户开发</a>
+                            <%-- //客户关系管理权限
+                            客户区域基础数据查看,客户区域基础数据维护,客户类别基础数据查看,客户类别基础数据维护,客户信息查看,客户信息维护,公司样品管理,公司样品查看,外送样品管理,新客户开发--%>
+
+
+
+                        </div>
+
+                        <div class="collapsed">
+                            <span>项目管理</span>
+                            <a href="../ProjectMgt/PMPRMProject.aspx?state=Supply"  id="ProjectSupply" runat="server">项目申请</a>
+                            <a href="../ProjectMgt/PMPRMProject.aspx?state=Check" id="ProjectCheck" runat="server">项目审核</a>
+                             <a href="../ProjectMgt/PMPRMProject.aspx?state=Material" id="PMaterial" runat="server">项目材料维护</a>
+                            <a href="../ProjectMgt/PMPRMProject.aspx?state=Accept" id="PAccept" runat="server">项目验收报告提交</a>
+                            <a href="../ProjectMgt/PMPRMProject.aspx?state=AcceptCheck" id="AcceptCheck" runat="server">项目验收审核</a>
+                            <a href="../ProjectMgt/PMPRMProject.aspx?state=Approval" id="Approval" runat="server">项目批准</a>
+                            <a href="../ProjectMgt/PMPPRMProjectSchedule.aspx?state=Look" id="ScheduleLook" runat="server">项目进度查看</a>
+                            <a href="../ProjectMgt/PMPPRMProjectSchedule.aspx?state=arrange" id="Sarrange" runat="server">项目部门设置</a>
+                            <a href="../ProjectMgt/PMPPRMProjectSchedule.aspx?state=Setting" id="SSetting" runat="server">项目进度设置</a>
+                            <a href="../ProjectMgt/PRMProjectMaintenance.aspx" id="Maintenance" runat="server">项目进度维护</a>
+                               <a href="../SalesMgt/MCA.aspx?status=MCALook" id="MCALook" runat="server">机械维修加工申请查看</a> 
+                              <a href="../SalesMgt/MCA.aspx?status=MCAEdit" id="MCAEdit" runat="server">机械维修加工申请维护</a> 
+                              <a href="../SalesMgt/MCA.aspx?status=MCADCheck" id="MCADCheck" runat="server">机械维修加工申请部门审核</a> 
+                              <a href="../SalesMgt/MCA.aspx?status=MCAPrice" id="MCAPrice" runat="server">机械维修加工申请报价</a> 
+                              <a href="../SalesMgt/MCA.aspx?status=MCAMCheck" id="MCAMCheck" runat="server">机械维修加工申请报价审核</a> 
+                           <a href="../REPORT_cc/PRMProject_IsFinish.aspx" id="A210" runat="server">项目完成情况汇总</a>
+
+                        </div>
+                        <div class="collapsed">
+                            <span>采购管理</span>
+                           <a href="../PurchasingMgt/PMPSupply.aspx" id="PSupply" runat="server">供应商信息维护</a>
+                            <a href="../PurchasingMgt/PMPSupply.aspx?state=Look" id="SLook" runat="server">供应商信息查看</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificApply" id="CertificApply" runat="server">供应商认证申请制定</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificApplyLook" id="CertificApplyLook" runat="server">供应商认证申请查看</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificEdit" id="CertificEdit" runat="server">供应商认证信息填写</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificSign" id="CertificSign" runat="server">供应商认证会签</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificPreCheck" id="CertificPreCheck" runat="server">供应商认证技术副总审核</a>
+                            <a href="../PurchasingMgt/PMSupplyCertific.aspx?state=CertificCheck" id="CertificCheck" runat="server">供应商认证总经理审核</a>
+                                <a href="../PurchasePlan/PurchasingPlanTwo.aspx?status=PurchasingPlanLook" id="PurchasingPlanLook" runat="server">采购计划查看</a>
+                  <a href="../PurchasePlan/PurchasingPlanTwo.aspx?status=PurchasingPlanEdit" id="PurchasingPlanEdit" runat="server">采购计划维护</a>
+                  <a href="../PurchasePlan/PurchasingPlanTwo.aspx?status=PurchasingPlanCheck" id="PurchasingPlanCheck" runat="server">采购计划审核</a>
+                   <a href="../PurchasePlan/PurchasingPlanTwo.aspx?status=PurchasingPlanBuy" id="PurchasingPlanBuy" runat="server">采购计划执行</a>
+                           
+                   
+                            <a href="../PurchasingMgt/PMPMaterialPrice.aspx?state=Chip" id="Chip" runat="server">芯片价格录入</a>
+                              <a href="../PurchasingMgt/PMPMaterialPrice.aspx?state=Other" id="Other" runat="server">原材料价格录入</a>
+               
+                            <a href="../PurchasingMgt/PMPApplyRule.aspx" id="ApplyRule" runat="server">采购申请规则制定</a>
+                            <a href="../PurchasingMgt/PMSupplyMaterial.aspx?state=Make" id="PMake" runat="server">采购申请制定</a>
+                            <a href="../PurchasingMgt/PMSupplyMaterial.aspx?state=Check" id="MCheck" runat="server">采购申请审核</a> 
+                            <a href="../PurchasingMgt/PMSupplyMaterial.aspx?state=Emergency" id="Emergency" runat="server">紧急采购申请</a>
+                            <a href="../PurchasingMgt/PMPurchaseApplyMaintain.aspx" id="Maintain" runat="server">采购申请执行维护</a>
+                            <a href="../PurchasingMgt/PMPurchaseOrder.aspx" id="Order" runat="server">采购订单</a>
+                            <a href="../Laputa/PaymentBill.aspx" id="Bill" runat="server">采购开票</a>
+                             <a href="../Laputa/PaymentMonthPlan.aspx?type=look" id="PaymentMonthPlanLook" Visible="False" runat="server">采购付款月计划查看</a>
+                                    <a href="../Laputa/PaymentMonthPlan.aspx?type=make" id="PaymentMonthPlanMake" Visible="False"  runat="server">采购付款月计划制定</a>
+                                    <a href="../Laputa/PaymentWeekPlan.aspx?type=look" id="PaymentWeekPlanLook"  Visible="False" runat="server">采购付款周计划查看</a>
+                                    <a href="../Laputa/PaymentWeekPlan.aspx?type=make" id="PaymentWeekPlanMake"  Visible="False" runat="server">采购付款周计划制定</a>
+                                     <a href="../Laputa/PaymentWeekPlan.aspx?type=pay" id="PaymentPay"  Visible="False" runat="server">采购付款</a>
+                             
+                            <a href="../PurchasingMgt/PMEquipment.aspx?state=Make" id="EMake" runat="server">设备采购申请制定</a>
+            <a href="../PurchasingMgt/PMEquipment.aspx?state=ESupplyCheck" id="ESupplyCheck" runat="server">设备采购申请审核</a>
+             <a href="../PurchasingMgt/PMEquipment.aspx?state=ESupplyPurchase" id="ESupplyPurchase" runat="server">设备采购</a>
+             <a href="../PurchasingMgt/PMEquipment.aspx?state=ESupplyTest" id="ESupplyTest" runat="server">设备采购调试</a>
+              <a href="../PurchasingMgt/PMEquipment.aspx?state=EAcceptCheck" id="EAcceptCheck" runat="server">设备采购验收审核</a>
+                            <a href="../Laputa/PMCopper.aspx" id="Foundry" runat="server">铜材代工</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>库存管理</span>
+                           <a href="../InventoryMgt/IMMaterialBasicDataManagement.aspx?status=IMMaterialBasicSearch" id="IMMaterialBasicSearch" runat="server">物料基础数据查看</a>
+                            <a href="../InventoryMgt/IMMaterialBasicDataManagement.aspx?status=IMMaterialBasicEdit" id="IMMaterialBasicEdit" runat="server">物料基础数据维护</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=SeeSSd" id="SB1" runat="server">库房出入库类别查看</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=EdditSSd" id="SB2" runat="server">库房出入库类别维护</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=SeeStore" id="SB3" runat="server">库房基础数据查看</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=SeeAreal" id="SB4" runat="server">库房区域查看</a>
+                            <a href="../InventoryMgt/StoreBasic.aspx?status=EditStore" id="SB5" runat="server">库房基础数据维护</a>
+                            <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoEdit" id="LingliaoEdit" runat="server">领料单维护</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoCheck" id="LingliaoCheck" runat="server">领料单审核</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=INSLook" id="INSLook" runat="server">入库单查询</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=PurINS" id="PurINS" runat="server">采购入库</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=PTINS" id="PTINS" runat="server">成品入库</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=REINS" id="REINS" runat="server">退货入库</a>
+                            <a href="../Laputa/CopperInStore.aspx" id="copperinstore" runat="server" visible="false">铜材代工入库</a>
+                            <a href="../InventoryMgt/IMInStore.aspx?status=OtherINS" id="OtherINS" runat="server">其他入库</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoLook" id="LingliaoLook" runat="server">领料单查看</a>
+                           
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=OutLook" id="OutLook" runat="server">出库单查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=OutEdit" id="OutEdit" runat="server">出库单维护</a>
+                            <a href="../InventoryMgt/IMOutStore.aspx?status=SalesOut" id="SalesOut" runat="server">销售出库</a>
+                            <a href="../InventoryMgt/IMOutStore.aspx?status=LingliaoOut" id="LingliaoOut" runat="server">领料出库</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=InventoryLook" id="InventoryLook" runat="server">库存查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=PandianLook" id="PandianLook" runat="server">库存盘点查看</a>
+                           <a href="../InventoryMgt/IMOutStore.aspx?status=Pandian" id="Pandian" runat="server">库存盘点维护</a>
+                            <a href="../InventoryMgt/IMOver.aspx?status=BaofeiLook" id="BaofeiLook" runat="server">库存报废申请查看</a>
+                            <a href="../InventoryMgt/IMOver.aspx?status=BaofeiApply" id="BaofeiApply" runat="server">库存报废申请维护</a>
+                             <a href="../InventoryMgt/IMOver.aspx?status=BaofeiAnalysis" id="BaofeiAnalysis" runat="server">库存报废分析</a>
+                              <a href="../InventoryMgt/IMOver.aspx?status=BaofeiCheck" id="BaofeiCheck" runat="server">库存报废审核</a>
+                              <a href="../InventoryMgt/IMOver.aspx?status=BaofeiZhixing" id="BaofeiZhixing" runat="server">库存报废执行</a>
+                         <a href="../InventoryMgt/IMDiaobo.aspx?status=DiaoboLook" id="DiaoboLook" runat="server">调拨查询</a>
+                            <a href="../InventoryMgt/IMDiaobo.aspx?status=DiaoboOut" id="DiaoboOut" runat="server">调出管理</a>
+                            <a href="../InventoryMgt/IMDiaobo.aspx?status=DiaoboLIn" id="DiaoboLIn" runat="server">调入管理</a>
+                        </div>
+                           <div class="collapsed">
+                            <span>特殊产品管理</span>
+                            <a href="../CraftMgt/ProSpecial.aspx?state=apply" id="tscpsq" runat="server" visible="false" >特殊产品申请</a>
+                            <a href="../CraftMgt/ProSpecial.aspx?state=make" id="tscpzd" runat="server" visible="false" >特殊产品制定</a>
+                            <a href="../CraftMgt/ProSpecial.aspx?state=cs" id="tscphq" runat="server" visible="false" >特殊产品会签</a>
+                            <a href="../CraftMgt/ProSpecial.aspx?state=look" id="tscpck" runat="server" visible="false" >特殊产品查看</a>
+                        </div>
+
+                        <div class="collapsed">
+                            <span>工艺管理</span>
+                            <a href="../CraftMgt/CraftBasicInfoMgt.aspx" id="gongyijichu" runat="server" visible="false" >工艺基础信息管理</a>
+                            <a href="../CraftMgt/ProcessCraftMgt.aspx" id="gongxu" runat="server" visible="false" >工序维护</a>
+                            <a href="../Laputa/BOM.aspx?state=look" id="bomchakan"   runat="server" visible="false">BOM查看</a>
+                            <a href="../Laputa/BOM.aspx?state=manage" id="bomweihu"  runat="server" visible="false" >BOM维护</a>
+                            <a href="../CraftMgt/ProcessRouteMgt.aspx?state=manage" id="prmgt" runat="server" visible="false">工艺路线管理</a>
+                            <a href="../CraftMgt/ProcessRouteMgt.aspx?state=look" id="prlook" runat="server" visible="false">工艺路线查看</a>
+                            <a href="../Laputa/Proclass2.aspx?state=manage" id="proclass" runat="server" visible="false">产品分档管理</a>  
+                            <a href="../Laputa/Proclass2.aspx?state=look" id="proclasslook" runat="server" visible="false">产品分档查看</a>  
+
+
+                        </div>
+                        <div class="collapsed">
+                            <span>生产基础信息管理</span>
+							  <a href="../ProductionBasicInfo/PTCodeBasic.aspx?state=manage" id="cpbmjcxxwh" runat="server" visible="false">产品编码基础信息维护</a>
+							  <a href="../ProductionBasicInfo/PTCodeBasic.aspx?state=look" id="cpbmjcxxck" runat="server" visible="false">产品编码基础信息查看</a>
+							 <a href="../ProductionBasicInfo/PBPTIPS.aspx?state=manage" id="cpcscsjcwh" runat="server" visible="false" >产品测试参数基础维护</a>
+                              <a href="../ProductionBasicInfo/PBPTIPS.aspx?state=look" id="cpcscsjcck" runat="server" visible="false" >产品测试参数基础查看</a>
+						    <a href="../ProductionBasicInfo/PBProSeries.aspx?state=manage" id="cpxlwh" runat="server" visible="false">产品系列维护</a>
+                            <a href="../ProductionBasicInfo/PBProSeries.aspx?state=look" id="cpxlck" runat="server" visible="false">产品系列查看</a>
+							<a href="../ProductionBasicInfo/PBProType.aspx?state=manage" id="cpxhwh" runat="server"  visible="false">产品型号维护</a>
+                            <a href="../ProductionBasicInfo/PBProType.aspx?state=look" id="cpxhck" runat="server"   visible="false">产品型号查看</a>
+                            <a href="../ProductionBasicInfo/PTWONum.aspx?state=codeman" id="codeman" runat="server"   visible="false">随工单产品代码维护</a>
+                            <a href="../ProductionBasicInfo/PTWONum.aspx?state=codelook" id="codelook" runat="server"   visible="false">随工单产品代码查看</a>
+                            <a href="../ProductionBasicInfo/PBIProductBaiscInfoMgt.aspx?state=manage" id="cpjcxx" runat="server" visible="false">产品基础信息维护</a>
+                            <a href="../ProductionBasicInfo/PBIProductBaiscInfoMgt.aspx?state=look" id="cpxxck" runat="server" visible="false">产品基础信息查看</a>
+                            <a href="../ProductionBasicInfo/ProMainSeries.aspx?state=manage" id="cpdxhgl" runat="server" visible="false">产品大型号管理</a>
+						    <a href="../ProductionBasicInfo/ProMainSeries.aspx?state=look" id="cpdxhck" runat="server" visible="false">产品大型号查看</a>
+						    <a href="../ProductionBasicInfo/OverTimeOption.aspx" id="csyywh" runat="server"  visible="false">超时原因选项维护</a>
+                            <a id="ycxxwh" href="../ProductionBasicInfo/PBIProductErrorInfo.aspx" runat="server"   visible="false">异常原因现象选项维护</a>
+                            <a href="../ProductionBasicInfo/TemplateUpload.aspx" id="mbgl" runat="server"  visible="false">模板管理</a>
+
+                        </div>
+                        <div class="collapsed">
+                            <span>产能核定</span>
+                     <a href="../Capacity/CapacityBasic.aspx?state=manage" id="cnhdjcxxwh" runat="server" visible="false" >产能核定基础信息维护</a>
+					 <a href="../Capacity/CapacityBasic.aspx?state=look" id="cnhdjcxxck" runat="server" visible="false" >产能核定基础信息查看</a>
+                     <a href="../Capacity/CapacityInfo.aspx?state=manage" id="cnhdwh" runat="server" visible="false"  >产能核定维护</a>
+                     <a href="../Capacity/CapacityInfo.aspx?state=look" id="cnhdck" runat="server" visible="false"  >产能核定查看</a>
+
+
+                        </div>
+                        <div class="collapsed">
+                              <span>生产计划管理</span>
+                           <a href="../ProductionPlanMgt/PMPCBasic.aspx?state=scyjhhqbmgl"  id="scyjhhqbmgl" runat="server" visible="false"  >生产月计划会签维护</a>
+                              <%--<a href="../ProductionPlanMgt/PMPCBasic.aspx?state=look"  id="scyjhhqbmck" runat="server" visible="false"  >生产月计划会签部门查看</a>--%>
+                           <a href="../ProductionPlanMgt/PMPCBasic.aspx?state=sczjhhqbmgl"  id="sczjhhqbmgl" runat="server" visible="false"  >生产周计划会签维护</a>
+                           <a href="../ProductionPlanMgt/PMPCBasic.aspx?state=mkyjhhqbmgl"  id="mkyjhhqbmgl" runat="server" visible="false"  >模块月计划会签维护</a>
+                           <a href="../ProductionPlanMgt/PMPCBasic.aspx?state=mkzjhhqbmgl"  id="mkzjhhqbmgl" runat="server" visible="false"  >模块周计划会签维护</a>
+                           <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=manage&linenum=0"  id="scyjhgl" runat="server" visible="false"  >生产月计划管理</a>
+                           <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=review&linenum=0" id="scyjhsh" runat="server" visible="false" >生产月计划审核</a>
+                            <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=lookl&inenum=0" id="scyjhck" runat="server" visible="false" >生产月计划查看</a>
+                             
+                            <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=manage&linenum=0" id="sczjhgl" runat="server" visible="false" >生产周计划管理</a>
+                           <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=review&linenum=0" id="sczjhsh" runat="server" visible="false" >生产周计划审核</a>
+                            <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=look&linenum=0" id="sczjhck" runat="server" visible="false" >生产周计划查看</a>
+                            <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=manage&linenum=1"  id="A7" runat="server" visible="false"  >模块生产月计划管理</a>
+                           <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=review&linenum=1" id="A8" runat="server" visible="false" >模块生产月计划审核</a>
+                            <a href="../ProductionPlanMgt/PPMProMonthPlan.aspx?state=lookl&linenum=1" id="A9" runat="server" visible="false" >模块生产月计划查看</a>
+                                 <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=manage&linenum=1" id="A10" runat="server" visible="false" >模块生产周计划管理</a>
+                           <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=review&linenum=1" id="A11" runat="server" visible="false" >模块生产周计划审核</a>
+                            <a href="../ProductionPlanMgt/PPMProWeekPlan.aspx?state=look&linenum=1" id="A12" runat="server" visible="false" >模块生产周计划查看</a>
+                             <a href="../Laputa/MMP.aspx?state=look&linenum=0" id="clzjhck" runat="server" visible="false"  >材料月计划查看</a>
+                             <a href="../Laputa/MMP.aspx?state=make&linenum=0" id="clyjhzd" runat="server" visible="false" >材料月计划制定</a>
+                             <a href="../Laputa/MMP.aspx?state=audit&linenum=0" id="clyjhsh" runat="server" visible="false" >材料月计划审核</a>
+                            <a href="../Laputa/WMP.aspx?state=look&linenum=0" id="cailzjhck" runat="server" visible="false" >材料周计划查看</a>
+                             <a href="../Laputa/WMP.aspx?state=make&linenum=0" id="clzjhzd" runat="server" visible="false" >材料周计划制定</a>
+                             <a href="../Laputa/WMP.aspx?state=audit&linenum=0" id="clzjhsh" runat="server" visible="false" >材料周计划审核</a>
+                             <a href="../Laputa/MMP.aspx?state=look&linenum=1" id="A1" runat="server" visible="false"  >模块材料月计划查看</a>
+                             <a href="../Laputa/MMP.aspx?state=make&linenum=1" id="A2" runat="server" visible="false" >模块材料月计划制定</a>
+                             <a href="../Laputa/MMP.aspx?state=audit&linenum=1" id="A3" runat="server" visible="false" >模块材料月计划审核</a>
+                            <a href="../Laputa/WMP.aspx?state=look&linenum=1" id="A4" runat="server" visible="false" >模块材料周计划查看</a>
+                             <a href="../Laputa/WMP.aspx?state=make&linenum=1" id="A5" runat="server" visible="false" >模块材料周计划制定</a>
+                             <a href="../Laputa/WMP.aspx?state=audi&linenum=1t" id="A6" runat="server" visible="false" >模块材料周计划审核</a>
+
+
+
+                        </div>
+
+                        <div class="collapsed">
+                            <span>生产过程管理</span>
+					     <a href="../ProductionProcess/CSUser.aspx?state=manage" id="khdczygl" runat="server" visible="false">客户端操作员管理</a>
+                           <a href="../ProductionProcess/CSUser.aspx?state=look" id="khdczyck" runat="server" visible="false">客户端操作员查看</a>
+                          <a href="../ProductionProcess/WorkOrderCreate.aspx" id="sgdsc" runat="server" visible="false"  >随工单生成</a>
+                         <a href="../ProductionProcess/ErrorNew.aspx?state=ycsb" id="ycsb" runat="server" visible="false"  >异常申报</a>
+                          <a href="../ProductionProcess/ErrorNew.aspx?state=pbyccl" id="pbyccl" runat="server" visible="false"  >品保异常处理</a>
+					      <a href="../ProductionProcess/ErrorNew.aspx?state=gcyccl" id="gcyccl" runat="server" visible="false"  >工程异常处理</a>
+					      <a href="../ProductionProcess/ErrorNew.aspx?state=scyccl" id="scyccl" runat="server" visible="false"  >生产异常处理</a>
+						  <a href="../ProductionProcess/ErrorNew.aspx?state=pbychq" id="pbychq" runat="server" visible="false"  >品保异常会签</a>
+						  <a href="../ProductionProcess/ErrorNew.aspx?state=gcychq" id="gcychq" runat="server" visible="false"  >工程异常会签</a>
+                          <a href="../ProductionProcess/ErrorNew.aspx?state=scychq" id="scychq" runat="server" visible="false"  >生产异常会签</a>
+						  <a href="../ProductionProcess/ErrorNew.aspx?state=zdbmgz" id="zdbmgz" runat="server" visible="false"  >主导部门跟踪</a>
+						  <a href="../ProductionProcess/ErrorNew.aspx?state=look" id="ycck" runat="server" visible="false"  >异常查看</a>
+                            <a href="../ProductionProcess/WorkOrderCheck.aspx?state=manage" id="zzpwh" runat="server" visible="false" >在制品维护</a>
+                            <a href="../ProductionProcess/WorkOrderCheck.aspx" id="zzpck" runat="server" visible="false" >在制品查看</a>
+                            <a href="../ProductionProcess/WorkOrderDivided.aspx?state=devide" id="sgdfd" runat="server" visible="false" >随工单分单</a>
+                            <a href="../ProductionProcess/WorkOrderDivided.aspx?state=combine" id="sgdhd" runat="server" visible="false" >随工单合单</a>
+                            <a href="../WorkOrderSalary/WOSSalary.aspx?state=manage" id="gjxlwh" runat="server" visible="false" >工价系列维护</a>
+						    <a href="../WorkOrderSalary/WOSSalary.aspx?state=look" id="gjxlck" runat="server" visible="false" >工价系列查看</a>
+                            <a href="../WorkOrderSalary/WorkingTeam.aspx?state=manage" id="bzxxwh" runat="server" visible="false" >班组信息维护</a>
+						    <a href="../WorkOrderSalary/WorkingTeam.aspx?state=look" id="bzxxck" runat="server" visible="false" >班组信息查看</a>
+					
+							  </div>
+							     <div class="collapsed">
+                            <span>计时计件管理</span>
+                            <a href="../WorkOrderSalary/ZhuangPeiJiJian.aspx?state=manage" id="zpjjwh" runat="server" visible="false"  >装配计件维护</a>
+							<a href="../WorkOrderSalary/ZhuangPeiJiJian.aspx?state=look" id="zpjjck" runat="server" visible="false"  >装配计件查看</a>
+                            <a href="../WorkOrderSalary/SalaryDayCalculate.aspx?state=manage" id="jsjjrhs" runat="server" visible="false" >计时计件日核算制定</a>
+							<a href="../WorkOrderSalary/SalaryDayCalculate.aspx?state=review" id="jsjjrhssh" runat="server" visible="false" >计时计件日核算审核</a>
+							<a href="../WorkOrderSalary/SalaryDayCalculate.aspx?state=look" id="jsjjrck" runat="server" visible="false" >计时计件日核算查看</a>
+                            <a href="../WorkOrderSalary/TimeSalary.aspx?state=manage" id="scjsrtb" runat="server" visible="false" >生产计时日提报制定</a>
+							<a href="../WorkOrderSalary/TimeSalary.aspx?state=look" id="scjsrtbck" runat="server" visible="false" >生产计时日提报查看</a>
+							<a href="../WorkOrderSalary/ShengChanWuGuanFeiGuDing.aspx?state=look" id="scwgfgdjsck" runat="server" visible="false">生产无关非固定计时查看</a>
+                            <a href="../WorkOrderSalary/ShengChanWuGuanFeiGuDing.aspx?state=make" id="scwgfgdjstb" runat="server" visible="false">生产无关非固定计时提报</a>
+                            <a href="../WorkOrderSalary/ShengChanWuGuanFeiGuDing.aspx?state=cs" id="scwgfgdjscs" runat="server" visible="false">生产无关非固定计时初步审核</a>
+                            <a href="../WorkOrderSalary/ShengChanWuGuanFeiGuDing.aspx?state=rs" id="scwgfgdjsrs" runat="server" visible="false">生产无关非固定计时人事审核</a>
+                            <a href="../WorkOrderSalary/ShengChanWuGuanFeiGuDing.aspx?state=cw" id="scwgfgdjscw" runat="server" visible="false">生产无关非固定计时财务审核</a>
+							<a href="../WorkOrderSalary/scwggdjs.aspx?state=look" id="scwggdjsck" runat="server" visible="false">生产无关固定计时查看</a>
+                            <a href="../WorkOrderSalary/scwggdjs.aspx?state=make" id="scwggdjstb" runat="server" visible="false">生产无关固定计时提报</a>
+                            <a href="../WorkOrderSalary/scwggdjs.aspx?state=cs" id="scwggdjscs" runat="server" visible="false">生产无关固定计时初步审核</a>
+                            <a href="../WorkOrderSalary/scwggdjs.aspx?state=rs" id="scwggdjsrs" runat="server" visible="false">生产无关固定计时人事审核</a>
+                            <a href="../WorkOrderSalary/scwggdjs.aspx?state=cw" id="scwggdjscw" runat="server" visible="false">生产无关固定计时财务审核</a>
+						    <a href="../WorkOrderSalary/JiJianShenHeNoZp.aspx?state=sh" id="jjxmcwsh" runat="server" visible="false" >非装配计件项目财务审核</a>
+                            <a href="../WorkOrderSalary/JiJianShenHeNoZp.aspx?state=look" id="jjxmshck" runat="server" visible="false" >非装配计件项目审核查看</a>
+							<a href="../WorkOrderSalary/JiJianShenHeNoZp.aspx?state=zpsh" id="jjxmcwshzpsh" runat="server"  visible="false" >装配计件项目财务审核</a>
+                            <a href="../WorkOrderSalary/JiJianShenHeNoZp.aspx?state=zplook" id="jjxmcwshzplook" runat="server"  visible="false">装配计件项目审核查看</a>
+						    <a href="../WorkOrderSalary/jsxmsh.aspx?state=sh" id="jsxmsh" runat="server"  visible="false" >生产相关计时信息财务审核</a>
+                            <a href="../WorkOrderSalary/jsxmsh.aspx?state=sh" id="jsxmck" runat="server"  visible="false" >生产相关计时信息审核查看</a>
+                            <a href="../WorkOrderSalary/jjbl.aspx?state=make" id="jjblzd" runat="server" visible="false" >计件补录提报</a>
+                            <a href="../WorkOrderSalary/jjbl.aspx?state=sh" id="jjblsh" runat="server"  visible="false">计件补录审核</a>
+                            <a href="../WorkOrderSalary/jjbl.aspx?state=look" id="jjblck" runat="server"  visible="false">计件补录查看</a>
+                            <a href="../WorkOrderSalary/jsbl.aspx?state=make" id="jsbltb" runat="server" visible="false" >计时补录提报</a>
+                            <a href="../WorkOrderSalary/jsbl.aspx?state=sh" id="jsblsh" runat="server"  visible="false">计时补录审核</a>
+                            <a href="../WorkOrderSalary/jsbl.aspx?state=look" id="jsblck" runat="server" visible="false" >计时补录查看</a>                      
+					  </div>
+                        <div class="collapsed">
+                            <span>生产跟踪管理</span> 
+                             <a href="../ProductionTrack/OEMOrderTrack.aspx?state=OEMake" id="jgddgzzd" runat="server" visible="false" >加工订单跟踪制定</a>
+                             <a href="../ProductionTrack/OEMOrderTrack.aspx?state=OESign" id="jgddgzhq" runat="server" visible="false" >加工订单跟踪会签</a>
+                             <a href="../ProductionTrack/OEMOrderTrack.aspx?state=look" id="jgddgz" runat="server" visible="false" >加工订单跟踪查看</a>
+                             <a href="../Laputa/ProductPlanTrack.aspx" id="scjhgz" runat="server" visible="false" >生产计划跟踪</a>
+                             <a href="../ProductionTrack/ShengChanPanCun.aspx" id="scxpc" runat="server" visible="false" >生产线盘存</a>
+                             </div>
+                        <div class="collapsed">
+                              <span>生产问题产品处理</span>
+                            <a href="../Laputa/DefectProduct.aspx?state=look"  id="wtcpck" runat="server" visible="false" >生产问题产品查看</a>
+                            <a href="../Laputa/DefectProduct.aspx?state=manage" id="wtcpgl" runat="server" visible="false">生产问题产品管理</a>
+                             <a href="../Laputa/DefectProduct.aspx?state=track"  id="wtcpgz" runat="server" visible="false" >生产问题产品跟踪</a>
+                            <a href="../Laputa/DefectProduct.aspx?state=audit" id="wtcpsh" runat="server" visible="false">生产问题产品审核</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>进料检验管理</span>
+                            <a href="../IQCMgt/IQCItemsMgt.aspx?state=Item" id="Item" runat="server">检验项目维护</a>
+                            <a href="../IQCMgt/IQCCertificationMgt.aspx?state=Certification" id="Certification" runat="server">认证信息维护</a>
+                            <a href="../IQCMgt/IQCMgt.aspx?state=IQCMgt" id="IQCMgt" runat="server">待检物料检验\认证</a>
+                            <a href="../IQCMgt/IQCAuMgt.aspx?state=IQCAuMgt" id="IQCAuMgt" runat="server">进料检验审核</a>
+                            <a href="../IQCMgt/IQCAuMgt.aspx?state=IQCAuMgtReview" id="IQCAuMgtReview" runat="server">进料检验查看</a>
+                            
+                        </div>
+                        <div class="collapsed">
+                            <span>实验测试管理</span>
+                            <a href="../ExperimentTest/ETExpTestBasicInfoMgt.aspx?state=Item" id="Item1" runat="server">实验项目维护</a>
+                            <a href="../ExperimentTest/ETSampleTypeMgt.aspx?state=Sample" id="Sample" runat="server">样品类型维护</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=Submit" id="Submit" runat="server">实验申请提交</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppAu" id="AppAu" runat="server">实验申请审核</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppAck" id="AppAck" runat="server">实验申请接收</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppRes" id="AppRes" runat="server">实验结果录入</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppArl" id="AppArl" runat="server">实验结果审批</a>
+                            <a href="../ExperimentTest/ETExpAppSubmit.aspx?state=AppView" id="AppView" runat="server">实验进度追踪</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>HSF有毒物质管理</span>
+                          <a href="../Laputa/HSFElement.aspx" runat="server" id="hsfelement" visible="False">有毒成分基础数据维护</a>
+                            <a href="../Laputa/HSFMaterialElement.aspx"
+                                id="hsfmaterialelement" runat="server" visible="false">物料有毒成分项目维护</a>
+                            <a href="../Laputa/HSF.aspx" runat="server"
+                                id="hsf"  visible="false">有毒物质管理</a>
+                            <a href="../Laputa/HSFDue.aspx" runat="server"
+                                id="hsfdue"  visible="false">有毒物质报告到期查看</a>
+                            <a href="../Laputa/HSFDue.aspx" runat="server"
+                                id="hsfreportdownload"  visible="false">有毒物质报告下载</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>计量器具管理</span>
+                            <a href="../MeasApplianceMgt/MeasApplianceMgt.aspx?state=MeasAppliance" id="MeasAppliance" runat="server">计量器具维护</a>
+                            <a href="../MeasApplianceMgt/MeasApplianceMgt.aspx?state=MeasApplianceLook" id="MeasApplianceLook" runat="server">计量器具查看</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>型式实验管理</span>
+                            <a href="../TypeTestMgt/TypeTestMgt.aspx?status=Typetest" id="Typetest" runat="server">型式实验管理</a>
+                            <a href="../TypeTestMgt/TypeTestMgt.aspx?status=Typetestlook" id="Typetestlook" runat="server">型式实验查看</a>
+                        </div>
+
+                        <div class="collapsed">
+                            <span>设备管理</span>
+                                <%--基础信息维护--%>
+                                 <a href="../EquipMgt/EMEquipType.aspx?status=EMType" id="EMType" runat="server">设备类型管理</a>
+                                 <a href="../EquipMgt/EMEquipName_Model.aspx?status=EMName" id="EMName" runat="server">设备基础信息管理</a>
+                                 <a href="../EquipMgt/EMEquipName_Model.aspx?status=EMNameLook" id="EMNameLook" runat="server">设备基础信息查看</a>
+                                 <a href="../EquipMgt/EMEquipmentInf.aspx?status=EMInf" id="EMInf" runat="server">设备台账管理</a>
+                                 <a href="../EquipMgt/EMEquipmentInf.aspx?status=EMLookInf" id="EMLookInf" runat="server">设备台账查看</a>
+                                 <%--保养--%>
+                                 <a href="../EquipMgt/EMEquipUpkeepItem.aspx?status=EMItem" id="EMItem" runat="server">设备保养项目管理</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMMake" id="EMMake" runat="server">设备保养计划制定</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMLookP" id="EMLookP" runat="server">设备保养计划查看</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMGen" id="EMGen" runat="server">设备保养计划生成</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMStar" id="EMStar" runat="server">设备保养开始确认</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMDealP" id="EMDealP" runat="server">设备保养情况记录</a>
+                                 <a href="../EquipMgt/EMEquipUpkeepPlan.aspx?status=EMHis" id="EMHis" runat="server">设备保养历史记录查看</a>
+                                 <%--故障单，厂内维修--%>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxApp" id="EMWxApp" runat="server">设备故障维修申请</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxAck" id="EMWxAck" runat="server">设备故障维修确认</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCnDeal" id="EMCnDeal" runat="server">设备故障维修情况记录</a>
+                                 <%--故障，出厂维修--%>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcApp" id="EMCcApp" runat="server">出厂维修审批</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcExpect" id="EMCcExpect" runat="server">出厂维修预算</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcFinan" id="EMCcFinan" runat="server">出厂维修财务审核</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcConfirmor" id="EMCcConfirmor" runat="server">出厂维修出厂确认</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcAct" id="EMCcAct" runat="server">出厂维修回厂信息完善</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcFinanConfirmor" id="EMCcFinanConfirmor" runat="server">出厂维修财务确认</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMCcLook" id="EMCcLook" runat="server">出厂维修查看</a>
+                                 <%--厂内维修和出厂维修均完成后--%>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxCheck" id="EMWxCheck" runat="server">设备故障维修验收</a>
+                                 <a href="../EquipMgt/EMEquipMaintenanceApp.aspx?status=EMWxLook" id="EMWxLook" runat="server">设备故障维修查看</a>
+                                 <%--报废--%>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMApp" id="EMApp" runat="server">设备报废申请</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMApproval" id="EMApproval" runat="server">设备报废审批</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMAllow" id="EMAllow" runat="server">设备报废批准</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMDeal" id="EMDeal" runat="server">设备报废处理</a>
+                                 <a href="../EquipMgt/EMEquipUnusedApp.aspx?status=EMLook" id="EMLook" runat="server">设备报废情况查看</a>
+
+                        </div>
+                       <div class="collapsed">
+        <span>人事档案管理</span>
+        <a href="../HRFilesMgt/HRPostMaintance.aspx?status=postLook" id="postLook" runat="server">人事岗位查看</a>
+        <a href="../HRFilesMgt/HRPostMaintance.aspx?status=postMain" id="postMain" runat="server">人事岗位维护</a>
+        <a href="../HRFilesMgt/HRETypeMaintance.aspx?status=typeLook" id="typeLook" runat="server">员工类型查看</a>
+        <a href="../HRFilesMgt/HRETypeMaintance.aspx?status=typeMain" id="typeMain" runat="server">员工类型维护</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=documentLook" id="documentLook" runat="server">人事档案查看</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=documentMain" id="documentMain" runat="server">人事档案维护</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=documentMain_Quit" id="documentMain_Quit" runat="server">离职员工档案维护</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=salaryLook" id="salaryLook" runat="server">人员调薪记录查看</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=salaryMain" id="salaryMain" runat="server">人员调薪管理</a>
+        <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=changeLook" id="changeLook" runat="server">人事异动查看</a>
+         <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=changeMain" id="changeMain" runat="server">人事异动管理</a>
+          <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=rewardLook" id="rewardLook" runat="server">人员奖惩查看</a>
+         <a href="../HRFilesMgt/HRDDetailMgt.aspx?status=rewardMain" id="rewardMain" runat="server">人员奖惩管理</a>
+    </div>
+                        <div class="collapsed">
+                            <span>培训管理</span>
+                            <a href="../TrainningMgt/NETItemMaintenance.aspx?status=itemsLook" id="itemsLook" runat="server">新员工培训项目查看</a>
+                            <a href="../TrainningMgt/NETItemMaintenance.aspx?status=itemsMain" id="itemsMain" runat="server">新员工培训项目维护</a>
+                            <a href="../TrainningMgt/NewEmpInfoAdd.aspx?status=newEAdd" id="newEAddAdd" runat="server">新员工培训信息新建</a>
+                            <a href="../TrainningMgt/NewEmpScoreInput.aspx?status=ScoreInput" id="ScoreInput" runat="server">新员工培训结果录入</a>
+                            <a href="../TrainningMgt/NewEmpResuls.aspx?status=LookResult" id="LookResult" runat="server">新员工培训结果查看</a>
+                            <a href="../TrainningMgt/TrainingTypeMaintenance.aspx?status=TraType" id="TraType" runat="server">培训类型维护</a>
+                            <a href="../TrainningMgt/TrainingYearPlan.aspx?status=TraTYearLook" id="TraTYearLook" runat="server">培训年度计划查看</a>
+                            <a href="../TrainningMgt/TrainingYearPlan.aspx?status=TraTYear" id="TraTYear" runat="server">培训年度计划维护</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=ItemMgt" id="ItemMgt" runat="server">培训计划安排</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=MonthDetail" id="MonthDetail" runat="server">培训计划详情查看</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=ResultInput" id="ResultInput" runat="server">培训成绩录入</a>
+                            <a href="../TrainningMgt/TrainningMonthPlan.aspx?status=ResultReview" id="ResultReview" runat="server">培训记录查看</a>
+							<a href="../TrainningMgt/TrainningPersonDetail.aspx?status=PersonDetail" id="PersonDetail" runat="server">培训详情查询</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>薪资管理</span>
+                            <a href="../SalaryMgt/SalaryAccountSetMaintanance.aspx?status=Set" id="Set" runat="server">薪资账套维护</a>
+                            <a href="../SalaryMgt/SalaryIndividualIncomeMgt.aspx?status=IndividualIncome" id="IndividualIncome" runat="server">个税基础信息维护</a>
+                            <a href="../SalaryMgt/SalaryTimeItemMaintanance.aspx?status=Time" id="Time" runat="server">计时项目维护</a>
+                            <a href="../SalaryMgt/SalaryTimeItemMaintanance.aspx?status=TimeLook" id="TimeLook" runat="server">计时项目查看</a>
+                            <a href="../SalaryMgt/SalaryPieceworkItemMaintanance.aspx?status=Piecework" id="Piecework" runat="server">计件项目维护</a>
+                            <a href="../SalaryMgt/SalaryPieceworkItemMaintanance.aspx?status=PieceworkLook" id="PieceworkLook" runat="server">计件项目查看</a>
+                            <a href="../SalaryMgt/SalaryPieceSeries.aspx?status=PieceSeries" id="PieceSeries" runat="server">计件系列维护</a>
+                            <%--<a href="../SalaryMgt/SalaryTimeDayCalculate.aspx?status=TimeDayCalculate" id="TimeDayCalculate" runat="server">计时工资日计算</a>
+                            <a href="../SalaryMgt/SalaryPieceDayCalculate.aspx?status=PieceDayCalculate" id="PieceDayCalculate" runat="server">计件工资日计算</a>
+                            <a href="../SalaryMgt/SalaryTimeDayCalculate.aspx?status=TimeDayCheck" id="TimeDayCheck" runat="server">计时工资日审核</a>
+                            <a href="../SalaryMgt/SalaryPieceDayCalculate.aspx?status=PieceDayCheck" id="PieceDayCheck" runat="server">计件工资日审核</a>--%>
+                            <a href="../SalaryMgt/SalaryMonthCalculate.aspx?status=MonthCalculate" id="MonthCalculate" runat="server">薪资月度结算</a>
+                            <a href="../SalaryMgt/SalaryMonthCalculate.aspx?status=MonthAudit" id="MonthAudit" runat="server">薪资月度审核</a>
+                            <a href="../SalaryMgt/SalaryMonthCalculate.aspx?status=MonthSearch" id="MonthSearch" runat="server">薪资月度查看</a>
+                            <a href="../SalaryMgt/SalaryReview.aspx?status=Review" id="Review" runat="server">薪资个人查看</a>
+
+                        </div>
+                        <div class="collapsed">
+                            <span>绩效管理</span>
+                            <a href="../HRPerfMgt/HRPDetailView.aspx?status=PerMainView" id="PerMainView" runat="server">绩效基础数据查看</a>
+                            <a href="../HRPerfMgt/HRPDetailMgt.aspx?status=PerMain" id="PerMain" runat="server">绩效基础数据维护</a>
+                            <a href="../HRPerfMgt/HRPerfInput.aspx?status=PerInfoInput" id="PerInfoInput" runat="server">绩效考核信息录入</a>
+                            <a href="../HRPerfMgt/HRPerfCheck.aspx?status=PerAudit" id="PerAudit" runat="server">绩效考核结果审核</a>
+                            <a href="../HRPerfMgt/HRPerfManagerCheck.aspx?status=PerMAudit" id="PerMAudit" runat="server">绩效考核经理考核</a>
+                            <a href="../HRPerfMgt/HRPerfReview.aspx?status=PerReview" id="PerReview" runat="server">绩效考核结果查看</a>
+                        </div>
+                        <div class="collapsed">
+                            <span>受控文件管理</span>
+                            <a href="../ControlledDocMgt/BasicCode.aspx?status=BasicCode" id="BasicCode" runat="server">受控文件基础数据维护</a>
+                            <a href="../ControlledDocMgt/BasicCode.aspx?status=BasicLook" id="BasicLook" runat="server">受控文件基础数据查看</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocIn" id="ControlDocIn" runat="server">受控文件录入</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocApp" id="ControlDocApp" runat="server">受控文件申请</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocSpecil" id="ControlDocSpecil" runat="server">分发特殊文件编号</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocAu" id="ControlDocAu" runat="server">受控文件主管审核</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocSign" id="ControlDocSign" runat="server">受控文件会签</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocApprov" id="ControlDocApprov"  runat="server">受控文件审批</a>
+                            <a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocLook" id="ControlDocLook" runat="server">受控文件申请查看</a>
+                            <%--<a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocDown" id="ControlDocDown" runat="server">受控文件下载</a>--%>
+                            <%--<a href="../ControlledDocMgt/ControlldeDoc.aspx?status=ControlDocDownlook" id="ControlDocDownlook" runat="server">受控文件查阅</a>--%>
+                        </div>
+
+                        <div class="collapsed">
+                            <span>报表服务</span>
+                                  <a href="../report_cc/PaymentReport.aspx"  Visible="False" id="PaymentReport" runat="server">采购付款报表</a>
+                                     <a href="../report_cc/PurchaseReport.aspx"  Visible="False" id="PurchaseReport" runat="server">采购报表</a>
+                           <a href="../report_cc/HSFInfo.aspx"  Visible="False" id="HSFInfo" runat="server">有毒物质报表</a>
+                              <a href="../report_cc/ProjectInfoProType.aspx" Visible="False" id="ProjectProType" runat="server">工程部型号合格率报表</a>
+                                    <a href="../report_cc/ProjectInfoEquipment.aspx" Visible="False" id="ProjectEquipment" runat="server">工程部设备合格率报表</a>
+                                    <a href="../report_cc/ProjectInfoMaterial.aspx" Visible="False" id="ProjectMaterial" runat="server">工程部材料合格率报表</a>
+                                      
+                                    <a href="../report_cc/ProjectInfoProSeries.aspx" Visible="False" id="ProjectSeries" runat="server">工程部系列合格率报表</a>
+                                    <a href="../report_cc/QASeriesAndMainSeries.aspx" Visible="False" id="QAMainSeries" runat="server">品保部合格率报表</a>
+                                    <a href="../report_cc/SunMasterType.aspx" Visible="False" id="SunType" runat="server">孙总浇灌/塑封/模块合格率报表</a>
+                                    <a href="../report_cc/SunMasterTypeYearTrends.aspx" Visible="False" id="SunTypeYear" runat="server">孙总浇灌/塑封/模块年度合格率趋势报表</a>
+                                    <a href="../report_cc/SunMasterTypeMonthTrends.aspx" Visible="False" id="SunTypeMonth" runat="server">孙总浇灌/塑封/模块历年同月合格率趋势报表</a>
+                                    <a href="../report_cc/ProjectInfoProMainSeries.aspx" Visible="False" id="SunMainSeries" runat="server">孙总大型号合格率报表</a>
+                                    <a href="../report_cc/SunMasterTypeYearTrendsMainSeries.aspx" Visible="False" id="SunMainSeriesYear" runat="server">孙总大型号年度合格率报表</a>
+                                    <a href="../report_cc/SunMasterTypeMonthTrendsMainSeries.aspx" Visible="False" id="SunMainSeriesMonth" runat="server">孙总大型号历年同月合格率报表</a>
+                                    <a href="../report_cc/ProjectInfoProSeries.aspx" id="SunSeries" Visible="False" runat="server">孙总系列合格率报表</a>
+                                    <a href="../report_cc/SunMasterTypeYearTrendsSeries.aspx" Visible="False" id="SunSeriesYear" runat="server">孙总系列年度合格率趋势报表</a>
+                                    <a href="../report_cc/SunMasterTypeMonthTrendsSeries.aspx" Visible="False" id="SunSeriesMonth" runat="server">孙总系列历年同月合格率趋势报表</a>
+                            <a href="../REPORT_cc/SMOrderDeliverPlan.aspx" id="TotalDeliverPlan" Visible="False" runat="server">发货计划统计表</a>
+                            <a href="../REPORT_cc/CustomerComplaint.aspx?status=CustomerComplaint" id="CustomerComplaint" runat="server">客户投诉汇总表</a>
+							<a href="../REPORT_cc/SalesOrder.aspx?status=SalesOrder" id="SalesOrder" runat="server">订单完成情况统计表</a>
+							<a href="../REPORT_cc/OrderDeliver.aspx" id="OrderDeliver" runat="server">销售发货单</a>
+							<a href="../REPORT_cc/OrderReturn.aspx" id="OrderReturn" runat="server">销售退货单</a>
+                            <a href="../REPORT_cc/CRMCompanySampleCount.aspx" id="CRMCompanySampleCount" runat="server">每月样品统计</a>
+							<a href="../REPORT_cc/SalesMonthPlanFinisih.aspx" id="SalesMonthPlanFinisih" runat="server">每月销售计划完成情况统计</a>
+							<a href="../REPORT_cc/CRMCustomerInfoBind_Condition.aspx" id="CRMCustomerInfoBind_Condition" runat="server">客户档案汇总表</a>
+                            <a href="../REPORT_cc/ReturnPayDetail.aspx" id="ReturnPayDetail" runat="server">销售回款详细表</a>
+							<a href="../REPORT_cc/ReturnPayPlan.aspx" id="ReturnPayPlan" runat="server">销售回款计划表</a>
+							<a href="../REPORT_cc/NewCustomerSales.aspx" id="NewCustomerSales" runat="server">新客户销售额汇总</a>
+							<a href="../REPORT_cc/SMDetailReport.aspx?status=SMDetailReport" id="SMDetailReport" runat="server">客户明细账</a>
+							<a href="../REPORT_cc/SaleAnalysis.aspx?status=SaleAnalysis" id="SaleAnalysis" runat="server">销售分析表</a>
+							<a href="../REPORT_cc/SalesDetailGather.aspx" id="SalesDetailGather" runat="server">销售明细汇总</a>
+							<a href="../REPORT_cc/BillApply.aspx" id="BillApply" runat="server">开票申请汇总</a>
+                            <a href="../REPORT_cc/SalesPerformance.aspx?status=SalesPerformance" id="SalesPerformance" runat="server">销售业绩一览表</a>
+                            <a href="../REPORT_cc/RightTimeSM.aspx" id="RightTimeSM" runat="server">订单库存在制品一览表</a>
+                            <a href="../REPORT_cc/TotalIM.aspx?status=TotalIM" id="TotalIM" runat="server">库存统计报表</a>
+                            <a href="../REPORT_cc/Store.aspx" id="StoreTotal" runat="server">库存明细账汇总表</a>
+                            <a href="../REPORT_cc/IQCSum.aspx" id="IQCSum" runat="server">IQC检验汇总表</a>
+                            <a href="../REPORT_cc/Spare.aspx?status=Spare" id="Spare" runat="server">备件领用统计表</a>
+                            <a href="../REPORT_cc/PMPurchaseApplyMaterial_Department.aspx" id="PMPurchaseApplyMaterial_Department" runat="server">采购申请物料数量汇总</a>
+							<a href="../REPORT_cc/PMPurchaseApplyMaterial_Num.aspx" id="PMPurchaseApplyMaterial_Num" runat="server">采购申请部门申请情况汇总</a>
+							<a href="../REPORT_cc/OfficeAppliance.aspx" id="OfficeAppliance" runat="server">每月办公用品申请汇总</a>
+
+                            <a href="../ProjectMgt/PRMProjectMaintenance.aspx?state=Look" id="A20" runat="server">项目进度查看</a>
+                            <a href="../REPORT_cc/PRMProject_IsFinish.aspx" id="PRMProject_IsFinish" runat="server">项目完成情况汇总</a>
+                            <a href="../REPORT_cc/ControlledDocApp.aspx?status=ControlledDocApp" id="ControlledDocApp" runat="server">各部门受控文件一览表</a>
+                            <a href="../REPORT_cc/ControlledDocAppHandout.aspx?status=ControlledDocAppHandout" id="ControlledDocAppHandout" runat="server">受控文件分发一览表</a>
+                            <a href="../REPORT_cc/EquipUpkeepPlan.aspx?status=EquipUpkeepPlan" id="EquipUpkeepPlan" runat="server">设备保养完成情况统计表</a>
+                            <a href="../REPORT_cc/EquipMaintenance.aspx?status=EquipMaintenance" id="EquipMaintenance" runat="server">设备台账故障停机统计表</a>
+							
+                            
+                            <a href="../REPORT_cc/EquipMaintenanceTotal.aspx?status=EquipMaintenanceTotal" id="EquipMaintenanceTotal" runat="server">设备故障停机统计总表</a>
+                            <a href="../REPORT_cc/EquipOutput.aspx?status=EquipOutput" id="EquipOutput" runat="server">设备产量统计表</a>
+							<a href="../REPORT_cc/ExpTest.aspx?status=ExpTest" id="ExpTest" runat="server">实验数据统计表</a>
+							<a href="../REPORT_cc/Equiptrend.aspx?status=Equiptrend" id="Equiptrend" runat="server">设备维修率和停机率统计表</a>						
+							<a href="../REPORT_cc/PBProTypeInfo.aspx" id="ProType" runat="server">产品型号说明表</a>					
+							<a href="../REPORT_cc/ProductSum.aspx?status=ProductSum" id="ProductSum" runat="server">产品流量统计</a>					
+							<a href="../HRFilesMgt/HRDDetailMgt.aspx?status=Reward" id="Reward" runat="server">人员奖惩表</a>
+							<a href="../REPORT_cc/PersonnelChangeDetail.aspx" id="PersonnelChangeDetail" runat="server">人事异动报表</a>
+							<a href="../REPORT_cc/QuitInfo.aspx" id="QuitInfo" runat="server">离职日报表</a>
+							<a href="../REPORT_cc/WOError_Statistics.aspx" id="WOError_Statistics" runat="server">异常统计表</a>
+							<a href="../REPORT_cc/SalaryEachMonthAnalysis.aspx" id="SalaryEachMonthAnalysis" runat="server">月度薪资分析表</a>
+							<a href="../REPORT_cc/SalaryYearCompare.aspx" id="SalaryYearCompare" runat="server">年度薪资对比表</a>
+                            <a href="../REPORT_cc/TimePerDayDetail.aspx?status=TimePerDayDetail" id="TimePerDayDetail" runat="server">计时信息详情表</a>
+                            <a href="../REPORT_cc/TimeTotal.aspx?status=ATimeTotal" id="ATimeTotal" runat="server">计时信息阶段统计表</a>
+                            <a href="../REPORT_cc/PiecePerDayDetail.aspx?status=APiecePerDayDetail" id="APiecePerDayDetail" runat="server">计件信息详情表</a>
+                            <a href="../REPORT_cc/PieceTotal.aspx?status=APieceTotal" id="APieceTotal" runat="server">计件信息阶段统计表</a>
+							<a href="../REPORT_cc/Chanliang.aspx" id="Chanliang" runat="server">工人计件产量报表</a>
+							<a href="../REPORT_cc/PersonnelSalaryRecord.aspx" id="PersonnelSalaryRecord" runat="server">人事调薪报表</a>
+							<a href="../REPORT_cc/SalaryDetailEachMonth.aspx" id="SalaryDetailEachMonth" runat="server">每月薪资汇总表</a>
+							<a href="../REPORT_cc/PerformceDetail.aspx" id="PerformceDetail" runat="server">年度中层管理干部绩效考核统计表</a>
+							<a href="../REPORT_cc/WIP_CJCLB.aspx" id="WIP_CJCLB" runat="server">生产工序产量汇总表</a>
+							<a href="../REPORT_cc/TrainingEachMonthAnalysis.aspx" id="TrainingEachMonthAnalysis" runat="server">培训月报表</a>
+							<a href="../REPORT_cc/WIP_PBC.aspx" id="WIP_PBC" runat="server">工序产量统计表</a>
+                            <a href="../REPORT_cc/PieceChage.aspx" id="PieceChage" runat="server">计件工价变动表</a>
+                            <a href="../REPORT_cc/TimeChage.aspx" id="TimeChage" runat="server">计时工价变动表</a>
+                            <a href="../REPORT_cc/SXJ_BLPLX.aspx" id="SXJ_BLPLX" runat="server">不良品分类统计表</a>
+                            <a href="../REPORT_cc/HRMan.aspx" id="HRMan" runat="server">人员配置统计表</a>
+                            <a href="../REPORT_cc/QuitCountPercent.aspx" id="QuitCountPercent" runat="server">人员流失率年报表</a>
+                            <a href="../REPORT_cc/QuitWorkAge.aspx" id="QuitWorkAge" runat="server">人员流失工龄年报表</a>
+                            <a href="../REPORT_cc/IPQCBad.aspx" id="IPQCBad" runat="server">制程IPQC不良品汇总表</a>
+                            <a href="../REPORT_cc/WIP_BadPro_BigType.aspx" id="WIP_BadPro_BigType" runat="server">不同规格不良品统计表</a>
+                             <a href="../REPORT_cc/WIP_BadPro_Series.aspx" id="WIP_BadPro_Series" runat="server">在制品不良汇总统计表（不同规格）</a>
+                           <a href="../REPORT_cc/PersonnelTransferEachMonth.aspx" id="PersonnelTransferEachMonth" runat="server">人事流动月报表</a>
+                           <a href="../REPORT_cc/MidLeaderPerform.aspx" id="MidLeaderPerform" runat="server">中干绩效考核表</a>
+				            <a href="../REPORT_cc/TimeDetailSum.aspx" id="jsmxtj" runat="server"  visible="false">年度计时工资信息统计表</a>
+                            <a href="../REPORT_cc/SalaryCountIn12Months.aspx" id="SalaryCountIn12Months" runat="server">年度薪资分析表</a>
+				            <a href="../REPORT_cc/WIP_CWTJ.aspx" id="WIP_CWTJ" runat="server">财务部在制品统计表</a>
+				             <a href="../REPORT_cc/TakeInventory.aspx" id="TakeInventory" runat="server">财务部在制品盘存统计表</a>
+                            <a href="../REPORT_cc/InOutStoreSum.aspx" id="InOutStoreSum" runat="server">出入库发货统计表</a>
+							<a href="../REPORT_cc/InManufacturingSum.aspx" id="InManufacturingSum" runat="server">在制品数量统计表</a>
+                        </div>
+
+    </div>
+
+                    </td>
+
+                    <td valign="top" id="con">
+                        <div id="I1"style="border-color: inherit; border-width: 0; height: 100%;width:100%; text-align: left;" >
+
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" class="auto-style7">
+                                            <table style="height: 25px; background-image: url('../images/main_28.gif'); border-top-left-radius: 14px; border-top-right-radius: 14px; border-color: #c7dce2; border-left: 1px solid #c7dce2; border-right: 1px solid #c7dce2; width: 100%; box-shadow: 1px 0px 10px rgba(116, 191, 231,0.2),-1px 0px 10px rgba(116, 191, 231,0.2),0px -1px 10px rgba(116, 191, 231,0.2);">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="auto-style6">
+                                                          <input id="lblMinute" runat="server" name="lblMinute" style="border:0px;width: 14px;background-color: transparent" type="text" /> 
+                                                          <input id="lblTime" name="lblTime" runat="server" type="text" style="border:0px;width:14px;background-color: transparent" /> 
+                                                            后登陆自动失效</td>
+                                                        <td class="auto-style6">&nbsp;</td>
+                                                        
+                                                        <td style="width:120px;">
+                                                            <asp:Label ID="LabelUserName" runat="server"></asp:Label>
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="auto-style7">
+                                            <table cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="auto-style4" valign="top">
+
+
+
+
+
+                                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                            </asp:ContentPlaceHolder>
+
+
+
+
+
+                                                        </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <table  style="border-style: none;width:100%; height: 74%" border="0" cellspacing="0" cellpadding="0">
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+
+                                    <td width="814" class="STYLE1" />
+                                    <span style="color: #404040; font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 乐山希尔电子有限公司版权所有©2013      </span>
+
+                                </tr>
+                            </table>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+
+
+
+            </table>
+    </div>
+    </form>
+</body>
+</html>
